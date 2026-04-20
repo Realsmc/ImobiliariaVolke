@@ -1,82 +1,117 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imobiliária Volke</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Imobiliária Volke</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 
-    <header>
-        <h1>Imobiliária Volke</h1>
-        <p>Encontre o lugar perfeito para você!</p>
+        <header class="navbar">
+    <div class="logo-container">
+        <img src="logo volke.png" alt="Logo Volke" class="logo">
+        <span class="brand-name">VOLKE</span>
+    </div>
+    <nav class="nav-links">
+        <a href="#">Comprar</a>
+        <a href="#">Alugar</a>
+        <a href="#">Lançamentos</a>
+        <a href="#">Contato</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Os melhores imóveis para você!</h1>
+        <p>Imobiliária Volke - Encontre o lugar perfeito.</p>
         
-        <div class="pesquisa">
+        <div class="search-box">
             <form action="#" method="GET">
-                <input type="search" name="q" placeholder="Buscar por cidade, bairro ou código...">
-                <button type="submit">Pesquisar</button>
+                <div class="input-group">
+                    <label>Pretensão</label>
+                    <select name="pretensao">
+                        <option>Comprar</option>
+                        <option>Alugar</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label>Tipo de imóvel</label>
+                    <select name="tipo">
+                        <option>Todos os imóveis</option>
+                        <option>Casa</option>
+                        <option>Apartamento</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label>Localização</label>
+                    <input type="text" name="q" placeholder="Digite ruas, bairros ou cidades...">
+                </div>
+                
+                <button type="submit" class="btn-search">🔍</button>
             </form>
         </div>
-    </header>
-
-    <main>
-        <h2>Imóveis em Destaque</h2>
-        
-        <div class="imoveis-grid">
+    </div>
+</section>
+        <main>
+            <h2>Imóveis em Destaque</h2>
             
-            <article class="imovel-card">
-                <img src="https://a0.muscache.com/im/pictures/b7b65239-1b76-4c17-bc03-f0d48a580d4c.jpg?im_w=720" alt="Fachada da Casa de Campo">
+            <div class="imoveis-grid">
                 
-                <h3>Casa de Campo em Ijuí</h3>
+                <article class="imovel-card">
+                    <img src="https://a0.muscache.com/im/pictures/b7b65239-1b76-4c17-bc03-f0d48a580d4c.jpg?im_w=720" alt="Fachada da Casa de Campo">
+                    
+                    <h3>Casa de Campo em Ijuí</h3>
+                    
+                    <p><strong>Descrição:</strong> Linda casa com 3 quartos, suíte, amplo quintal com piscina e área de lazer completa. Excelente localização, próxima ao centro.</p>
+                    <p><strong>Valor:</strong> R$ 950.000,00</p>
+                    
+                    <a href="https://wa.me/55999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20a%20Casa%20de%20Campo%20em%20Ijuí." target="_blank" class="btn-whatsapp">Entrar em Contato</a>
+                </article>
+
+                <article class="imovel-card">
+                    <img src="https://imgs2.cdn-imobibrasil.com.br/imagens/imoveis/202508151646374412.jpg" alt="Fachada do Apartamento 2">
+                    <h3>Apartamento Central</h3>
+                    <p><strong>Descrição:</strong> Apartamento moderno de 2 quartos. Vaga de garagem coberta e sacada com churrasqueira.</p>
+                    <p><strong>Valor:</strong> R$ 720.000,00</p>
+                    <a href="https://wa.me/55999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20Apartamento%20Central." target="_blank" class="btn-whatsapp">Entrar em Contato</a>
+                </article>
+
+            </div>
+
+            <section class="secao-interacao">
+                <h2>Gostou de algum modelo específico?</h2>
+                <p>Se você tem a foto de um imóvel que viu, ou o arquivo de um projeto que você amou, envie para nós e encontraremos algo parecido!</p>
                 
-                <p><strong>Descrição:</strong> Linda casa com 3 quartos, suíte, amplo quintal com piscina e área de lazer completa. Excelente localização, próxima ao centro.</p>
-                <p><strong>Valor:</strong> R$ 950.000,00</p>
-                
-                <a href="https://wa.me/55999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20a%20Casa%20de%20Campo%20em%20Ijuí." target="_blank" class="btn-whatsapp">Entrar em Contato</a>
-            </article>
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <label for="arquivo_imovel"><strong>Anexar imagem ou arquivo do imóvel desejado:</strong></label><br><br>
+                    <input type="file" id="arquivo_imovel" name="arquivo_imovel" accept="image/*, .pdf, .doc, .docx">
+                    <br><br>
+                    
+                    <label for="comentario">Deixe um comentário (opcional):</label><br>
+                    <textarea id="comentario" name="comentario" rows="4" style="width: 100%; max-width: 400px;"></textarea>
+                    <br><br>
+                    
+                    <button type="submit" style="padding: 10px 20px; cursor: pointer;">Enviar Arquivo</button>
+                </form>
+            </section>
 
-            <article class="imovel-card">
-                <img src="https://imgs2.cdn-imobibrasil.com.br/imagens/imoveis/202508151646374412.jpg" alt="Fachada do Apartamento 2">
-                <h3>Apartamento Central</h3>
-                <p><strong>Descrição:</strong> Apartamento moderno de 2 quartos. Vaga de garagem coberta e sacada com churrasqueira.</p>
-                <p><strong>Valor:</strong> R$ 720.000,00</p>
-                <a href="https://wa.me/55999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20Apartamento%20Central." target="_blank" class="btn-whatsapp">Entrar em Contato</a>
-            </article>
+        </main>
 
-        </div>
+        <footer>
+            <div class="redes-sociais">
+                <p>Siga-nos nas Redes Sociais:</p>
+                <a href="#instagram">Instagram</a> | 
+                <a href="#facebook">Facebook</a> | 
+                <a href="#linkedin">LinkedIn</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.8em;">&copy; 2026 Imobiliária Volke. Todos os direitos reservados.</p>
+        </footer>
 
-        <section class="secao-interacao">
-            <h2>Gostou de algum modelo específico?</h2>
-            <p>Se você tem a foto de um imóvel que viu, ou o arquivo de um projeto que você amou, envie para nós e encontraremos algo parecido!</p>
-            
-            <form action="#" method="POST" enctype="multipart/form-data">
-                <label for="arquivo_imovel"><strong>Anexar imagem ou arquivo do imóvel desejado:</strong></label><br><br>
-                <input type="file" id="arquivo_imovel" name="arquivo_imovel" accept="image/*, .pdf, .doc, .docx">
-                <br><br>
-                
-                <label for="comentario">Deixe um comentário (opcional):</label><br>
-                <textarea id="comentario" name="comentario" rows="4" style="width: 100%; max-width: 400px;"></textarea>
-                <br><br>
-                
-                <button type="submit" style="padding: 10px 20px; cursor: pointer;">Enviar Arquivo</button>
-            </form>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="redes-sociais">
-            <p>Siga-nos nas Redes Sociais:</p>
-            <a href="#instagram">Instagram</a> | 
-            <a href="#facebook">Facebook</a> | 
-            <a href="#linkedin">LinkedIn</a>
-        </div>
-        <p style="margin-top: 15px; font-size: 0.8em;">&copy; 2026 Imobiliária Volke. Todos os direitos reservados.</p>
-    </footer>
-
-</body>
-</html>
+    </body>
+    </html>
