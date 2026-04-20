@@ -28,12 +28,12 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0px;
 }
 
 /* Configurações da logo */
 .logo {
-    max-width: 150px; /* Aumentei o tamanho aqui */
+    max-width: 200px; /* Aumentei o tamanho aqui */
     height: auto;
     /* Filtro pra trocar a cor da imagem preta pro azul escuro do texto */
     filter: invert(12%) sepia(59%) saturate(4681%) hue-rotate(198deg) brightness(94%) contrast(107%);
