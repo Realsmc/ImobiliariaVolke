@@ -206,3 +206,146 @@ h2 {
 .btn-whatsapp:hover {
     background-color: #1ebe57;
 }
+
+
+/**/
+
+
+/* Página de contato */
+.contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 60px;
+    background: #f1f4f8; 
+}
+
+/* Layout geral */
+.contato-wrapper {
+    display: flex;
+    gap: 100px; 
+    max-width: 1100px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* lado entre em contato */
+.contato-info {
+    flex: 1;
+    max-width: 400px;
+    padding-right: 40px;
+    border-right: 1px solid #eee; 
+}
+
+.contato-info h2 {
+    color: #001f3f;
+    margin-bottom: 15px;
+}
+
+.contato-info p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+/* lado do fale conosco */
+.contato-container {
+    flex: 1.5;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contato-container h1 {
+    margin-bottom: 10px;
+    color: #001f3f;
+}
+
+.contato-container p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Campos */
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Efeito ao focar*/
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3); 
+}
+
+/* Botão */
+.btn-enviar {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #001f3f, #007bff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+/* Redes sociais dentro do contato */
+.social-contato {
+    margin-top: 30px;
+}
+
+.social-icons-small {
+    display: flex;
+    gap: 10px;
+}
+
+/* CÍRCULO */
+.social-icons-small a {
+    width: 35px;
+    height: 35px;
+    border: 1.5px solid #001f3f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+/* IMAGEM DENTRO */
+.social-icons-small img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
