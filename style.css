@@ -175,6 +175,13 @@ h2 {
     max-width: 320px;
     display: flex;
     flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Zoom quando passar o mouse por cima do card*/
+.imovel-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* Trava a altura das fotos pra não bagunçar o layout */
