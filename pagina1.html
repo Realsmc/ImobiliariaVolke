@@ -1,134 +1,186 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Casa de Campo - Volke</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" sizes="128x128" href="./logo volke.png">
 </head>
+
 <body>
 
-<header class="navbar">
-    <div class="logo-container">
-        <a href="./index.html">
-            <img src="logo volke.png" alt="Logo Volke" class="logo">
-        </a>
-        <span class="brand-name">VOLKE</span>
-    </div>
-
-    <nav class="nav-links">
-        <a href="./comprar.html">Comprar</a>
-        <a href="./alugar.html">Alugar</a>
-        <a href="./pagina1.html">Lançamentos</a>
-        <a href="./imobiliaria.html">Sobre nós</a>
-        <a href="./contato.html">Contato</a>
-    </nav>
-</header>
-
-<main class="detalhe-imovel">
-
-    <!-- TÍTULO -->
-    <section class="topo-imovel">
-        <h1>Casa de Campo</h1>
-        <p class="subtitulo">Conforto, espaço e qualidade de vida em um só lugar</p>
-    </section>
-
-    <!-- GALERIA -->
-    <section class="galeria">
-        <div class="slider">
-
-            <div class="slide">
-                <a href="https://vgprojetos.com/wp-content/uploads/2024/12/P7-1.png" target="_blank">
-                    <img src="https://vgprojetos.com/wp-content/uploads/2024/12/P7-1.png" alt="">
-                </a>
-            </div>
-
-            <div class="slide">
-                <a href="https://images.unsplash.com/photo-1568605114967-8130f3a36994" target="_blank">
-                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="">
-                </a>
-            </div>
-
-            <div class="slide">
-                <a href="https://images.unsplash.com/photo-1572120360610-d971b9d7767c" target="_blank">
-                    <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c" alt="">
-                </a>
-            </div>
-
-            <div class="slide">
-                <a href="https://images.unsplash.com/photo-1572120360610-d971b9d7767c" target="_blank">
-                    <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c" alt="">
-                </a>
-            </div>
-
-            <div class="slide">
-                <a href="https://images.unsplash.com/photo-1572120360610-d971b9d7767c" target="_blank">
-                    <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c" alt="">
-                </a>
-            </div>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="./index.html">
+                <img src="logo volke.png" alt="Logo Volke" class="logo">
+            </a>
+            <span class="brand-name">VOLKE</span>
         </div>
-    </section>
+        <nav class="nav-links">
+            <a href="./comprar.html">Comprar</a>
+            <a href="./alugar.html">Alugar</a>
+            <a href="./pagina1.html">Lançamentos</a>
+            <a href="./imobiliaria.html">Sobre nós</a>
+            <a href="./contato.html">Contato</a>
+        </nav>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <section class="conteudo-imovel">
+    </header>
+
+    <!-- CONTEÚDO -->
+    <main class="detalhe-imovel">
+
+        <!-- TOPO -->
+        <section class="topo-imovel">
+
+            <h1>Casa de Campo</h1>
+
+            <p class="subtitulo">
+                Conforto, espaço e qualidade de vida em um só lugar
+            </p>
+
+        </section>
+
+        <!-- GALERIA -->
+        <section class="galeria-imovel">
+
+            <!-- IMAGEM PRINCIPAL -->
+            <div class="imagem-principal">
+
+                <!-- BOTÃO ESQUERDO -->
+                <button type="button" class="seta esquerda" id="btnAnterior">
+                    ❮
+                </button>
+
+                <!-- IMAGEM GRANDE -->
+                <img
+                    id="imagemGrande"
+                    src="https://vgprojetos.com/wp-content/uploads/2024/12/P7-1.png"
+                    alt="Imagem do imóvel">
+
+                <!-- BOTÃO DIREITO -->
+                <button type="button" class="seta direita" id="btnProximo">
+                    ❯
+                </button>
+
+            </div>
+
+            <!-- MINIATURAS -->
+            <div class="miniaturas">
+
+                <img
+                    src="https://res.cloudinary.com/dqktwup44/image/upload/q_auto/f_auto/v1778433003/apartamento-com-1-quarto-para-alugar-35m-no-saude-sao-paulo_rl4nv5.webp"
+                    alt="Imagem 1">
+
+                <img
+                    src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80"
+                    alt="Imagem 2">
+
+                <img
+                    src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=1200&q=80"
+                    alt="Imagem 3">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80"
+                    alt="Imagem 4">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+                    alt="Imagem 5">
+
+            </div>
+
+        </section>
 
         <!-- INFORMAÇÕES -->
-        <div class="info-imovel">
+        <section class="conteudo-imovel">
 
-            <div class="preco">
-                <h2>R$ 950.000,00</h2>
-                <span>Venda</span>
+            <div class="info-imovel">
+
+                <!-- PREÇO -->
+                <div class="preco">
+                    <h2>R$ 950.000,00</h2>
+                    <span>Venda</span>
+                </div>
+
+                <!-- CARACTERÍSTICAS -->
+                <div class="caracteristicas">
+
+                    <div class="item">
+                        🛏 3 Quartos
+                    </div>
+
+                    <div class="item">
+                        🚿 2 Banheiros
+                    </div>
+
+                    <div class="item">
+                        🚗 2 Vagas
+                    </div>
+
+                    <div class="item">
+                        📍 Centro
+                    </div>
+
+                </div>
+
+                <!-- DESCRIÇÃO -->
+                <div class="descricao">
+
+                    <h3>Descrição</h3>
+
+                    <p>
+                        Linda casa com suíte, piscina, área gourmet completa e excelente iluminação natural.
+                        Ideal para famílias que buscam conforto, segurança e tranquilidade em uma excelente localização.
+                    </p>
+
+                </div>
+
+                <!-- BOTÃO -->
+                <a
+                    href="https://wa.me/55999999999"
+                    target="_blank"
+                    class="btn-whatsapp">
+
+                    Entrar em Contato
+
+                </a>
+
             </div>
 
-            <div class="caracteristicas">
-                <div class="item">🛏 3 Quartos</div>
-                <div class="item">🚿 2 Banheiros</div>
-                <div class="item">🚗 2 Vagas</div>
-                <div class="item">📍 Centro</div>
-            </div>
+        </section>
 
-            <div class="descricao">
-                <h3>Descrição</h3>
-                <p>
-                    Linda casa com suíte, piscina, área gourmet completa e excelente iluminação natural.
-                    Ideal para famílias que buscam conforto, segurança e tranquilidade em uma excelente localização.
-                </p>
-            </div>
-
-            <a href="https://wa.me/55999999999" target="_blank" class="btn-whatsapp">
-                Entrar em Contato
-            </a>
-
-        </div>
-        <div class="localizacao">
+        <!-- LOCALIZAÇÃO -->
+        <section class="localizacao">
 
             <h3>Localização</h3>
 
             <p class="endereco">
                 📍 Rua Exemplo, 123 - Centro, São Paulo - SP
             </p>
-            <br>
 
             <div class="mapa">
-                <iframe 
+
+                <iframe
                     src="https://www.google.com/maps?q=São+Paulo+SP&output=embed"
-                    width="100%" 
-                    height="300" 
-                    style="border:0;" 
-                    allowfullscreen="" 
+                    width="100%"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen=""
                     loading="lazy">
+
                 </iframe>
+
             </div>
 
-        </div>
+        </section>
 
-
-    </section>
-
-</main>
+    </main>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
-
-
