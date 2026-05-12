@@ -1,6 +1,6 @@
 // script.js
 
-// 1. INJETAR O FUNDO INTERATIVO (MESH GRADIENT)
+// 1. INJETAR O FUNDO INTERATIVO (Agora leve e sem lag)
 const meshBg = document.createElement('div');
 meshBg.className = 'mesh-bg';
 meshBg.innerHTML = `
@@ -8,39 +8,26 @@ meshBg.innerHTML = `
     <div class="mesh-blob blob-2"></div>
     <div class="mesh-blob blob-3"></div>
 `;
-// Adiciona o fundo logo no início do body
 document.body.prepend(meshBg);
 
-// 2. ANIMAÇÃO DAS ONDAS COM O SCROLL DO MOUSE
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const blob1 = document.querySelector('.blob-1');
-    const blob2 = document.querySelector('.blob-2');
-    const blob3 = document.querySelector('.blob-3');
+// Removemos a animação de scroll por JS para não lagar o site! 
+// O CSS está cuidando disso sozinho agora.
 
-    // Move as ondas em direções e velocidades diferentes para o efeito dinâmico
-    if (blob1) blob1.style.transform = `translateY(${scrollY * 0.15}px) translateX(${scrollY * 0.05}px) rotate(${scrollY * 0.02}deg)`;
-    if (blob2) blob2.style.transform = `translateY(${scrollY * -0.1}px) translateX(${scrollY * -0.05}px)`;
-    if (blob3) blob3.style.transform = `translateY(${scrollY * 0.2}px) translateX(${scrollY * -0.1}px) scale(${1 + scrollY * 0.0002})`;
-});
-
-// 3. LÓGICA DO CARROSSEL DE IMÓVEIS (Página Inicial)
+// 2. LÓGICA DO CARROSSEL DE IMÓVEIS (Página Inicial)
 function scrollCards(direction) {
     const container = document.getElementById('gridCards');
     if (container) {
-        // Move o carrossel suavemente para os lados
         container.scrollBy({ left: direction * 350, behavior: 'smooth' });
     }
 }
 
-// 4. LÓGICA DA GALERIA DE FOTOS (Página de Detalhes - pagina1.html)
+// 3. LÓGICA DA GALERIA DE FOTOS (Página de Detalhes - pagina1.html)
 document.addEventListener('DOMContentLoaded', () => {
     const imagemGrande = document.getElementById('imagemGrande');
     const miniaturas = document.querySelectorAll('.miniaturas img');
     const btnAnterior = document.getElementById('btnAnterior');
     const btnProximo = document.getElementById('btnProximo');
 
-    // Só executa se estiver na página que tem galeria
     if (imagemGrande && miniaturas.length > 0) {
         let indiceAtual = 0;
         const imagensSrc = Array.from(miniaturas).map(img => img.src);
@@ -72,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Define a primeira imagem como ativa ao carregar a página
         atualizarImagem(0);
     }
 });
