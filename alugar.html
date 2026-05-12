@@ -1,109 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imobiliária Volke</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="128x128" href="./logo volke.png">
+    <title>Imóveis para Aluguel - Volke</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <header class="navbar">
         <div class="logo-container">
-            <a href="./index.html">
-                <img src="logo volke.png" alt="Logo Volke" class="logo">
-            </a>
-            <span class="brand-name">VOLKE</span>
+            <a href="./index.html"><img src="logo volke.png" alt="Logo Volke" class="logo"></a>
         </div>
         <nav class="nav-links">
             <a href="./comprar.html">Comprar</a>
             <a href="./alugar.html">Alugar</a>
-            <a href="#">Lançamentos</a>
+            <a href="./pagina1.html">Lançamentos</a>
             <a href="./imobiliaria.html">Sobre nós</a>
             <a href="./contato.html">Contato</a>
+            <a href="./cliente.html">Área do Cliente</a>
         </nav>
     </header>
 
     <main>
         <h2>Imóveis para Aluguel</h2>
-
         <div class="imoveis-grid">
-
             <article class="imovel-card">
-                <img src="https://cdn-site.sigahost.com.br/ijuiimoveis/img_locacao/i1_7610_126742_1112_181225.jpeg" alt="Fachada Residencial Seychelles">
-
-                <h3>Apartamento em Ijuí</h3>
-
-                <p><strong>Descrição:</strong> Apartamento com 2 dormitórios (1 suíte) e 1 banheiro social, com sacada e churrasqueira,
-                     área de serviço separada e 2 vagas de garagem.</p>
-                <p><strong>Aluguel:</strong> R$ 2.800,00</p>
-
-                <a href="https://wa.me/55999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20a%20Casa%20de%20Campo%20em%20Ijuí."
-                    target="_blank" class="btn-whatsapp">Entrar em Contato</a>
+                <img src="https://cdn-site.sigahost.com.br/ijuiimoveis/img_locacao/i1_7610_126742_1112_181225.jpeg" alt="Apto Seychelles">
+                <div class="card-content">
+                    <h3>Apartamento em Ijuí</h3>
+                    <p>2 dormitórios, sacada com churrasqueira e 2 vagas de garagem.</p>
+                    <p class="valor">R$ 2.800,00 / mês</p>
+                </div>
+                <a href="./pagina1.html" class="btn-detalhes">Ver Detalhes</a>
+                <a href="https://wa.me/55999999999" class="btn-whatsapp">WhatsApp</a>
             </article>
-
-            <article class="imovel-card">
-                <img src="https://cdn-site.sigahost.com.br/ijuiimoveis/img_locacao/i1_8007_134854_1727_270326.jpeg"
-                    alt="Fachada Edifício Monte Carlo">
-                
-                <h3>Apartamento Central em Ijuí</h3>
-                
-                <p><strong>Descrição:</strong> Apartamento com 2 dormitórios (1 suíte) e 1 banheiro social, com sacada e churrasqueira,
-                     área de serviço separada e 1 vaga de garagem. Localizado no centro, em andar alto.</p>
-                <p><strong>Valor:</strong> R$ 2.500,00</p>
-                
-                <a href="https://wa.me/55999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20Apartamento%20Central."
-                    target="_blank" class="btn-whatsapp">Entrar em Contato</a>
-            </article>
-
-            <article class="imovel-card">
-                <img src="https://cdn-site.sigahost.com.br/ijuiimoveis/img_locacao/i1_7932_133646_1559_180326.jpeg" Fachada da Casa Residencial">
-                
-                <h3>Casa Residencial</h3>
-                
-                <p><strong>Descrição:</strong> Apartamento com 2 dormitórios (1 suíte) e 1 banheiro social, 
-                    área de serviço separada e 2 vagas de garagem. Localização em bairro afastado rodeado pela natureza.</p>
-                <p><strong>Aluguel:</strong> R$ 3.300,00</p>
-                
-                <a href="https://wa.me/55999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20Apartamento%20Central."
-                    target="_blank" class="btn-whatsapp">Entrar em Contato</a>
-            </article>
+        </div>
     </main>
 
-    <footer class="navbar">
+    <footer class="navbar" style="flex-direction: column; gap: 15px;">
         <div class="logo-container">
-            <img src="logo volke.png" alt="Logo Volke" class="logo">
-            <span class="brand-name">VOLKE</span>
+            <img src="logo volke.png" alt="Logo Volke" class="logo" style="height: 60px;">
         </div>
-
-        <div class="social-contato">
-            <span>Siga-nos:</span>
-            <div class="social-icons-small">
-                <a href="#"><img src="https://images.icon-icons.com/2248/PNG/96/instagram_icon_138461.png"
-                        alt="Instagram"></a>
-                <a href="#"><img
-                        src="https://images.icon-icons.com/694/PNG/96/Facebook_Rounded_icon-icons.com_61578.png"
-                        alt="Facebook"></a>
-                <a href="#"><img src="https://images.icon-icons.com/38/PNG/96/linkedin_social_5085.png"
-                        alt="Linkedin"></a>
-                <a href="#"><img
-                        src="https://images.icon-icons.com/947/PNG/96/youtube-play-button-outlined-social-symbol_icon-icons.com_74040.png"
-                        alt="Youtube"></a>
-                <a href="#"><img src="https://images.icon-icons.com/472/PNG/48/whatsapp-48_46210.png"
-                        alt="Whatsapp"></a>
-            </div>
+        <div class="social-icons-small">
+            <a href="#"><img src="https://images.icon-icons.com/2248/PNG/96/instagram_icon_138461.png" alt="Instagram"></a>
+            <a href="#"><img src="https://images.icon-icons.com/694/PNG/96/Facebook_Rounded_icon-icons.com_61578.png" alt="Facebook"></a>
         </div>
-
-        <p style="margin-top: 15px; font-size: 0.8em;">&copy; 2026 Imobiliária Volke. Todos os direitos reservados.</p>
+        <p style="font-size: 0.8em; color: #888;">© 2026 Imobiliária Volke. Todos os direitos reservados.</p>
     </footer>
-
 </body>
-
 </html>

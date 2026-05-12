@@ -1,84 +1,78 @@
-document.addEventListener("DOMContentLoaded", function () {
+// script.js
 
-    // IMAGEM PRINCIPAL
-    const imagemGrande = document.getElementById("imagemGrande");
+// 1. INJETAR O FUNDO INTERATIVO (MESH GRADIENT)
+const meshBg = document.createElement('div');
+meshBg.className = 'mesh-bg';
+meshBg.innerHTML = `
+    <div class="mesh-blob blob-1"></div>
+    <div class="mesh-blob blob-2"></div>
+    <div class="mesh-blob blob-3"></div>
+`;
+// Adiciona o fundo logo no início do body
+document.body.prepend(meshBg);
 
-    // TODAS AS MINIATURAS
-    const miniaturas = document.querySelectorAll(".miniaturas img");
+// 2. ANIMAÇÃO DAS ONDAS COM O SCROLL DO MOUSE
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const blob1 = document.querySelector('.blob-1');
+    const blob2 = document.querySelector('.blob-2');
+    const blob3 = document.querySelector('.blob-3');
 
-    // BOTÕES
-    const btnAnterior = document.getElementById("btnAnterior");
-    const btnProximo = document.getElementById("btnProximo");
+    // Move as ondas em direções e velocidades diferentes para o efeito dinâmico
+    if (blob1) blob1.style.transform = `translateY(${scrollY * 0.15}px) translateX(${scrollY * 0.05}px) rotate(${scrollY * 0.02}deg)`;
+    if (blob2) blob2.style.transform = `translateY(${scrollY * -0.1}px) translateX(${scrollY * -0.05}px)`;
+    if (blob3) blob3.style.transform = `translateY(${scrollY * 0.2}px) translateX(${scrollY * -0.1}px) scale(${1 + scrollY * 0.0002})`;
+});
 
-    // ÍNDICE ATUAL
-    let indiceAtual = 0;
+// 3. LÓGICA DO CARROSSEL DE IMÓVEIS (Página Inicial)
+function scrollCards(direction) {
+    const container = document.getElementById('gridCards');
+    if (container) {
+        // Move o carrossel suavemente para os lados
+        container.scrollBy({ left: direction * 350, behavior: 'smooth' });
+    }
+}
 
+// 4. LÓGICA DA GALERIA DE FOTOS (Página de Detalhes - pagina1.html)
+document.addEventListener('DOMContentLoaded', () => {
+    const imagemGrande = document.getElementById('imagemGrande');
+    const miniaturas = document.querySelectorAll('.miniaturas img');
+    const btnAnterior = document.getElementById('btnAnterior');
+    const btnProximo = document.getElementById('btnProximo');
 
-    // =========================
-    // TROCAR AO CLICAR
-    // =========================
-    miniaturas.forEach((miniatura, indice) => {
+    // Só executa se estiver na página que tem galeria
+    if (imagemGrande && miniaturas.length > 0) {
+        let indiceAtual = 0;
+        const imagensSrc = Array.from(miniaturas).map(img => img.src);
 
-        miniatura.addEventListener("click", function () {
+        function atualizarImagem(indice) {
+            imagemGrande.src = imagensSrc[indice];
+            miniaturas.forEach(m => m.classList.remove('ativa'));
+            miniaturas[indice].classList.add('ativa');
+        }
 
-            imagemGrande.src = miniatura.src;
-
-            indiceAtual = indice;
-
+        miniaturas.forEach((miniatura, index) => {
+            miniatura.addEventListener('click', () => {
+                indiceAtual = index;
+                atualizarImagem(indiceAtual);
+            });
         });
 
-    });
-
-
-    // =========================
-    // BOTÃO PRÓXIMO
-    // =========================
-    btnProximo.addEventListener("click", function () {
-
-        indiceAtual++;
-
-        // VOLTA PRO INÍCIO
-        if (indiceAtual >= miniaturas.length) {
-
-            indiceAtual = 0;
-
+        if (btnAnterior) {
+            btnAnterior.addEventListener('click', () => {
+                indiceAtual = (indiceAtual === 0) ? imagensSrc.length - 1 : indiceAtual - 1;
+                atualizarImagem(indiceAtual);
+            });
         }
 
-        imagemGrande.src = miniaturas[indiceAtual].src;
-
-    });
-
-
-    // =========================
-    // BOTÃO ANTERIOR
-    // =========================
-    btnAnterior.addEventListener("click", function () {
-
-        indiceAtual--;
-
-        // VOLTA PRO FINAL
-        if (indiceAtual < 0) {
-
-            indiceAtual = miniaturas.length - 1;
-
+        if (btnProximo) {
+            btnProximo.addEventListener('click', () => {
+                indiceAtual = (indiceAtual === imagensSrc.length - 1) ? 0 : indiceAtual + 1;
+                atualizarImagem(indiceAtual);
+            });
         }
 
-        imagemGrande.src = miniaturas[indiceAtual].src;
-
-    });
-
-
-    // =========================
-    // TELA CHEIA
-    // =========================
-    imagemGrande.addEventListener("click", function () {
-
-        if (imagemGrande.requestFullscreen) {
-
-            imagemGrande.requestFullscreen();
-
-        }
-
-    });
-
+        // Define a primeira imagem como ativa ao carregar a página
+        atualizarImagem(0);
+    }
 });

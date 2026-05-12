@@ -1,859 +1,543 @@
-*{
+/* =========================================
+   1. VARIÁVEIS GERAIS E RESET
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root {
+    --azul-marinho: #001f3f; 
+    --azul-claro: #0074D9;
+    --branco: #ffffff;
+    --cinza-fundo: #f4f4f9;
+    --cinza-texto: #333333;
+    
+    /* Efeitos Premium */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --sombra: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    --transicao: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style: none;
-    font-family: "Montserrat", sans-serif;
-}
-/* Reset básico do meu site */
-body {
-    background-color: #f8f9fa; /* Fundo cinza bem clarinho pro corpo do site */
-    color: #333;
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
-/* Minha barra do topo */
+body {
+    background-color: var(--cinza-fundo);
+    color: var(--cinza-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. FUNDO INTERATIVO (MESH GRADIENT)
+========================================= */
+.mesh-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background-color: var(--cinza-fundo);
+}
+
+.mesh-blob {
+    position: absolute;
+    filter: blur(120px);
+    opacity: 0.6;
+    border-radius: 50% 40% 60% 40%;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+
+.blob-1 {
+    width: 70vw;
+    height: 70vh;
+    background: var(--azul-claro);
+    top: -10vh;
+    left: -10vw;
+}
+
+.blob-2 {
+    width: 80vw;
+    height: 80vh;
+    background: var(--azul-marinho);
+    bottom: -20vh;
+    right: -10vw;
+}
+
+.blob-3 {
+    width: 60vw;
+    height: 60vh;
+    background: #4facfe;
+    top: 40vh;
+    left: 30vw;
+}
+
+/* =========================================
+   3. HEADER / NAVBAR E LOGO
+========================================= */
 .navbar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--sombra);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    padding: 15px 50px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombreado de leve */
+    padding: 10px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Agrupa logo e nome */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 0px;
 }
 
-/* Configurações da logo */
-.logo {
-    max-width: 200px; /* Aumentei o tamanho aqui */
-    height: auto;
-    /* Filtro pra trocar a cor da imagem preta pro azul escuro do texto */
-    filter: invert(12%) sepia(59%) saturate(4681%) hue-rotate(198deg) brightness(94%) contrast(107%);
+.logo-container .logo {
+    height: 120px; 
+    width: auto;
+    filter: invert(11%) sepia(50%) saturate(5185%) hue-rotate(200deg) brightness(90%) contrast(105%);
+    transition: var(--transicao);
 }
 
-/* Texto VOLKE do lado da logo */
-.brand-name {
-    font-size: 24px;
-    font-weight: 800;
-    color: #001f3f; /* Azul escuro */
+.logo-container .logo:hover {
+    transform: scale(1.05);
 }
 
-/* Links do menu */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
 .nav-links a {
     text-decoration: none;
-    color: #555;
-    margin-left: 25px;
-    font-weight: 500;
-    transition: color 0.3s;
+    color: var(--azul-marinho);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    position: relative;
+    transition: var(--transicao);
 }
 
-/* Cor do link quando passo o mouse */
-.nav-links a:hover {
-    color: #007bff;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--azul-claro);
+    transition: var(--transicao);
 }
 
-/* Banner principal com a imagem no fundo */
+.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { color: var(--azul-claro); }
+
+/* =========================================
+   4. BANNER PRINCIPAL (HERO) E BUSCA
+========================================= */
 .hero {
-    background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 128, 255, 0.5)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-    color: white;
+    background-image: linear-gradient(rgba(0, 31, 63, 0.75), rgba(0, 31, 63, 0.75)), 
+                      url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--branco);
+    padding: 100px 20px;
     text-align: center;
-    padding: 120px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 50px;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* Minha caixa de pesquisa arredondada */
 .search-box {
-    background: white;
-    max-width: 900px;
-    margin: 0 auto;
-    border-radius: 50px; /* Bordas redondinhas */
-    padding: 10px 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    display: inline-block;
+    background: var(--branco);
+    padding: 20px 30px;
+    border-radius: 50px;
+    box-shadow: var(--sombra);
 }
 
 .search-box form {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    gap: 15px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* Divisões dentro da pesquisa */
 .input-group {
     display: flex;
     flex-direction: column;
     text-align: left;
-    padding: 5px 20px;
-    flex: 1;
-    border-right: 1px solid #ddd; /* Linha separando os itens */
-}
-
-/* Tira a linha do último item */
-.input-group:last-of-type {
-    border-right: none;
 }
 
 .input-group label {
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 5px;
-    font-weight: 600;
+    color: var(--cinza-texto);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
-.input-group input, .input-group select {
-    border: none;
+.input-group select, .input-group input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
     outline: none;
-    font-size: 15px;
-    color: #333;
-    background: transparent;
-    font-family: 'Montserrat', sans-serif;
-    width: 100%;
+    min-width: 220px;
+    transition: var(--transicao);
 }
 
-/* Botão azul da pesquisa */
+.input-group input:focus, .input-group select:focus {
+    border-color: var(--azul-marinho);
+}
+
 .btn-search {
-    background-color: #059adfc9;
-    color: white;
+    background-color: var(--azul-marinho);
+    color: var(--branco);
     border: none;
-    border-radius: 50%; /* Deixa o botão redondo */
-    width: 55px;
-    height: 55px;
-    font-size: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-left: 10px;
-    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transicao);
+    height: 46px;
 }
 
 .btn-search:hover {
-    background-color: #0056b3;
-}
-
-/* Área dos imóveis embaixo do banner */
-main {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-h2 {
-    color: #007bff;
-    text-align: left;
-    margin-bottom: 30px;
-}
-
-/* Grade pra alinhar os cards das casas */
-.imoveis-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-/* Deixa os cards alinhados e na mesma altura */
-.imovel-card {
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 320px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Zoom quando passar o mouse por cima do card*/
-.imovel-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* Trava a altura das fotos pra não bagunçar o layout */
-.imovel-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover; /* Corta a foto sem amassar */
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.imovel-card h3 {
-    margin-top: 0;
-}
-
-/* Botão do zap */
-.btn-whatsapp {
-    display: block;
-    text-align: center;
-    background-color: #25D366;
-    color: white;
-    padding: 12px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: auto; /* Empurra o botão pro fundo do card */
-}
-
-.btn-whatsapp:hover {
-    background-color: #1ebe57;
-}
-
-
-/**/
-
-
-/* Página de contato */
-.contato {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 60px;
-    background: #f1f4f8; 
-}
-
-/* Layout geral */
-.contato-wrapper {
-    display: flex;
-    gap: 100px; 
-    max-width: 1100px;
-    width: 100%;
-    align-items: flex-start;
-}
-
-/* lado entre em contato */
-.contato-info {
-    flex: 1;
-    max-width: 400px;
-    padding-right: 40px;
-    border-right: 1px solid #eee; 
-}
-
-.contato-info h2 {
-    color: #001f3f;
-    margin-bottom: 15px;
-}
-
-.contato-info p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.info-item {
-    margin-bottom: 15px;
-}
-
-/* lado do fale conosco */
-.contato-container {
-    flex: 1.5;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.contato-container h1 {
-    margin-bottom: 10px;
-    color: #001f3f;
-}
-
-.contato-container p {
-    margin-bottom: 30px;
-    color: #666;
-}
-
-/* Campos */
-.form-group {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #555;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    margin-top: 5px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    outline: none;
-    transition: 0.3s;
-}
-
-/* Efeito ao focar*/
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0,123,255,0.3); 
-}
-
-/* Botão */
-.btn-enviar {
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(90deg, #001f3f, #007bff);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-enviar:hover {
+    background-color: var(--azul-claro);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-
-/* Redes sociais dentro do contato */
-.social-contato {
-    margin-top: 30px;
+/* =========================================
+   5. ESTRUTURA PRINCIPAL E TEXTOS
+========================================= */
+main {
+    flex: 1;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.social-icons-small {
-    display: flex;
-    gap: 10px;
+main h2 {
+    color: var(--azul-marinho);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2.2rem;
 }
 
-/* CÍRCULO */
-.social-icons-small a {
-    width: 35px;
-    height: 35px;
-    border: 1.5px solid #001f3f;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; 
+.texto-padrao {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    margin-bottom: 30px;
+    border: 1px solid var(--glass-border);
 }
 
-/* IMAGEM DENTRO */
-.social-icons-small img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-}
-
-/* FOTO DA FACHADA */
-.container {
-    display: flex;
-    margin: 50px;
-    justify-content: center; 
-    align-items: center;
-}
-
-.p {
-    margin-bottom: 24px; 
-    line-height: 1.8;    
+.texto-padrao p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: #444;
     text-align: justify;
 }
 
-/* GALERIA */
-.galeria {
-    margin-bottom: 30px;
+/* =========================================
+   6. GRIDS E CARDS DE IMÓVEIS
+========================================= */
+.imoveis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
 }
 
-/* Slider horizontal */
-.slider {
+.imovel-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
     display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 10px;
+    flex-direction: column;
+    transition: var(--transicao);
+    border: 1px solid var(--glass-border);
 }
 
-/* Remove barra feia (opcional) */
-.slider::-webkit-scrollbar {
-    height: 8px;
+.imovel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-.slider::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 10px;
-}
-
-/* Cada imagem */
-.slide {
-    flex: 0 0 auto;
-    width: 300px;
-    scroll-snap-align: start;
-}
-
-/* Imagem */
-.slide img {
+.imovel-card img {
     width: 100%;
-    height: 200px;
+    height: 230px;
     object-fit: cover;
-    border-radius: 10px;
-    transition: 0.3s;
-    cursor: pointer;
 }
 
-/* Zoom ao passar o mouse */
-.slide img:hover {
-    transform: scale(1.05);
-}
+.card-content { padding: 25px; flex: 1; }
+.imovel-card h3 { color: var(--azul-marinho); font-size: 1.3rem; margin-bottom: 10px; }
+.imovel-card p { font-size: 0.95rem; color: #666; margin-bottom: 15px; }
+.imovel-card .valor { font-weight: 700; color: var(--azul-marinho); font-size: 1.2rem; }
 
-/* Quando clica (abre grande) */
-.slide a {
+.btn-detalhes, .btn-whatsapp {
     display: block;
-}
-.detalhe-imovel {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-/* topo */
-.topo-imovel {
-    margin-bottom: 30px;
-}
-
-.topo-imovel h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.subtitulo {
-    color: #666;
-    font-size: 16px;
-}
-
-/* galeria */
-.galeria {
-    margin-bottom: 40px;
-}
-
-/* conteúdo */
-.conteudo-imovel {
-    display: flex;
-    gap: 40px;
-}
-
-/* box info */
-.info-imovel {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    width: 100%;
-}
-
-/* preço */
-.preco {
-    margin-bottom: 25px;
-}
-
-.preco h2 {
-    font-size: 28px;
-    color: #001f3f;
-}
-
-/* características */
-.caracteristicas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.item {
-    background: #f1f4f8;
-    padding: 10px 15px;
-    border-radius: 8px;
-}
-
-/* descrição */
-.descricao h3 {
-    margin-bottom: 10px;
-}
-
-.descricao p {
-    line-height: 1.7;
-    color: #555;
-}
-
-/* botão */
-.btn-whatsapp {
-    display: block;
-    margin-top: 25px;
     text-align: center;
-    background: #25D366;
-    color: white;
-    padding: 14px;
-    border-radius: 8px;
+    background-color: var(--azul-marinho);
+    color: var(--branco);
     text-decoration: none;
+    padding: 12px;
+    margin: 0 20px 20px;
+    border-radius: 8px;
     font-weight: bold;
-}
-/* LOCALIZAÇÃO */
-.localizacao {
-    margin-top: 40px;
+    transition: var(--transicao);
 }
 
-.localizacao h3 {
-    margin-bottom: 10px;
-}
+.btn-whatsapp { background-color: #25D366; margin-top: -10px; }
+.btn-detalhes:hover { background-color: var(--azul-claro); }
+.btn-whatsapp:hover { background-color: #1ebd57; }
 
-.endereco {
-    margin-bottom: 15px;
-    color: #555;
-    font-size: 15px;
-}
-
-.mapa iframe {
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.galeria-container {
+/* =========================================
+   7. CARROSSEL (PÁGINA INICIAL)
+========================================= */
+.carrosel-cards-wrapper {
     position: relative;
+    padding: 0 50px;
+}
+
+#gridCards {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 15px 5px;
+    scrollbar-width: none;
+}
+
+#gridCards::-webkit-scrollbar { display: none; }
+#gridCards .imovel-card { min-width: 320px; max-width: 320px; }
+
+.btn-card-scroll {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--azul-marinho);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: var(--sombra);
+    z-index: 10;
     display: flex;
     align-items: center;
+    justify-content: center;
+    transition: var(--transicao);
 }
 
-/* SETAS */
+.btn-card-scroll.prev { left: 0; }
+.btn-card-scroll.next { right: 0; }
+.btn-card-scroll:hover { background-color: var(--azul-claro); transform: translateY(-50%) scale(1.1); }
+
+/* =========================================
+   8. FORMS E ÁREA DO CLIENTE
+========================================= */
+.secao-interacao {
+    margin-top: 80px;
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--glass-border);
+}
+
+.login-form, .contato-container form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group label, .campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--azul-marinho);
+}
+
+.form-group input, .form-group textarea, .campo input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: var(--transicao);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-group input:focus, .form-group textarea:focus, .campo input:focus {
+    border-color: var(--azul-marinho);
+}
+
+.btn-enviar-arquivo, .btn-login, .btn-enviar {
+    background-color: var(--azul-marinho);
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.btn-enviar-arquivo:hover, .btn-login:hover, .btn-enviar:hover {
+    background-color: var(--azul-claro);
+    transform: translateY(-2px);
+}
+
+.area-cliente, .contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.login-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 1px solid var(--glass-border);
+}
+
+.login-logo img { 
+    height: 110px; 
+    width: auto;
+    margin: 10px 0 30px; 
+    filter: invert(11%) sepia(50%) saturate(5185%) hue-rotate(200deg) brightness(90%) contrast(105%);
+}
+
+.login-titulo h1 { color: var(--azul-marinho); margin-bottom: 10px; font-size: 2rem; }
+
+.contato-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: 1000px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* =========================================
+   9. GALERIA DA PÁGINA DE DETALHES E MAPA
+========================================= */
+.galeria-imovel { display: flex; flex-direction: column; align-items: center; margin: 30px 0; }
+.imagem-principal { position: relative; max-width: 900px; width: 100%; }
+.imagem-principal img { width: 100%; border-radius: 15px; height: 500px; object-fit: cover; box-shadow: var(--sombra); }
+
 .seta {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 31, 63, 0.85);
     color: white;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: 0.3s;
+    border: none;
+    font-size: 35px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: var(--transicao);
+}
+.seta:hover { background: var(--azul-claro); }
+.seta.esquerda { left: 15px; }
+.seta.direita { right: 15px; }
+
+.miniaturas { display: flex; gap: 15px; margin-top: 20px; overflow-x: auto; padding: 10px; }
+.miniaturas img { width: 120px; height: 80px; object-fit: cover; cursor: pointer; border-radius: 8px; border: 3px solid transparent; transition: var(--transicao); }
+.miniaturas img:hover { transform: scale(1.05); }
+.miniaturas img.ativa { border-color: var(--azul-marinho); }
+
+.info-imovel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid var(--glass-border);
 }
 
-.seta:hover {
-    background: rgba(0,0,0,0.8);
-}
+.caracteristicas { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; font-weight: 600; color: var(--azul-marinho); }
 
-.esquerda {
-    left: 10px;
-}
-
-.direita {
-    right: 10px;
-}
-
-/* ========================= */
-/* GALERIA NOVA DO IMÓVEL */
-/* ========================= */
-
-.galeria-imovel{
-    display: flex;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-/* IMAGEM PRINCIPAL */
-.imagem-principal{
-    position: relative;
-    flex: 1;
-    background: white;
-    border-radius: 12px;
+.localizacao { margin-top: 50px; }
+.mapa-container {
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    border: 5px solid var(--branco);
+    margin-top: 20px;
 }
 
-/* IMAGEM GRANDE */
-#imagemGrande{
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-    display: block;
-    cursor: pointer;
-}
-
-/* MINIATURAS */
-.miniaturas{
-    width: 170px;
+/* =========================================
+   10. FOOTER
+========================================= */
+footer {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-}
-
-/* IMAGENS PEQUENAS */
-.miniaturas img{
-    width: 100%;
-    height: 95px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    border: 3px solid transparent;
-}
-
-/* HOVER */
-.miniaturas img:hover{
-    transform: scale(1.03);
-    border-color: #007bff;
-}
-
-/* SETAS */
-.seta{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.5);
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
-    z-index: 10;
-    transition: 0.3s;
-}
-
-/* HOVER DAS SETAS */
-.seta:hover{
-    background: rgba(0,0,0,0.8);
-}
-
-/* POSIÇÕES */
-.esquerda{
-    left: 15px;
-}
-
-.direita{
-    right: 15px;
-}
-
-
-/* ========================= */
-/* ÁREA DO CLIENTE */
-/* ========================= */
-
-.area-cliente{
-    min-height: calc(100vh - 90px);
-
-    display: flex;
-    justify-content: center;
     align-items: center;
-
-    padding: 60px 20px;
-
-    background: #f8f9fa;
-}
-/* CARD LOGIN */
-
-.login-card{
-    width: 100%;
-    max-width: 500px;
-
-    background: white;
-
-    border-radius: 16px;
-
-    padding: 50px 45px;
-
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-/* TÍTULO */
-
-.login-titulo{
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.login-titulo h1{
-    font-size: 38px;
-    color: #001f3f;
-    margin-bottom: 10px;
-}
-
-.login-titulo p{
-    color: #666;
-    font-size: 15px;
-}
-
-/* LOGO */
-
-.login-logo{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 35px;
-}
-
-.login-logo img{
-    width: 170px;
-    height: auto;
-}
-
-/* FORM */
-
-.login-form{
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-/* CAMPOS */
-
-.campo{
-    display: flex;
-    flex-direction: column;
-}
-
-.campo label{
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #333;
-}
-
-.campo input{
-    width: 100%;
-
-    padding: 14px 16px;
-
-    border-radius: 10px;
-
-    border: 1px solid #dcdcdc;
-
-    font-size: 15px;
-
-    transition: 0.3s;
-}
-
-.campo input:focus{
-    outline: none;
-
-    border-color: #007bff;
-
-    box-shadow: 0 0 8px rgba(0,123,255,0.2);
-}
-
-/* SENHA */
-
-.senha-box{
-    position: relative;
-}
-
-.senha-box input{
-    padding-right: 50px;
-}
-
-.olho{
-    position: absolute;
-
-    right: 15px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    cursor: pointer;
-
-    color: #999;
-
-    font-size: 18px;
-}
-
-/* CHECKBOX */
-
-.lembrar{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    font-size: 14px;
-    color: #666;
-}
-
-/* BOTÃO */
-
-.btn-login{
-    width: 100%;
-
-    padding: 15px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #001f3f,
-        #007bff
-    );
-
-    color: white;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.btn-login:hover{
-    transform: translateY(-2px);
-
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-/* LINK */
-
-.login-links{
-    margin-top: 25px;
+    border-top: 2px solid var(--glass-border);
+    margin-top: auto;
     text-align: center;
 }
 
-.login-links a{
-    color: #007bff;
-
-    text-decoration: none;
-
-    font-size: 14px;
-}
-
-.login-links a:hover{
-    text-decoration: underline;
-}
-
-/* FOOTER */
-
-.login-footer{
-    margin-top: 35px;
-    text-align: center;
-}
-
-.login-footer p{
-    font-size: 13px;
-    color: #888;
-}
-
+.social-contato span { display: block; font-weight: 700; color: var(--azul-marinho); margin-bottom: 12px; font-size: 0.95rem; }
+.social-icons-small { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
+.social-icons-small img { width: 26px; height: 26px; opacity: 0.7; transition: var(--transicao); }
+.social-icons-small img:hover { opacity: 1; transform: scale(1.2); }
+footer p { font-size: 0.85rem; color: #888; }
