@@ -113,7 +113,7 @@ body {
 }
 
 .logo-container .logo {
-    height: 120px; 
+    height: 180px; 
     width: auto;
     filter: invert(11%) sepia(50%) saturate(5185%) hue-rotate(200deg) brightness(90%) contrast(105%);
     transition: var(--transicao);
