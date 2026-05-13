@@ -393,7 +393,8 @@ main h2 {
 }
 
 .login-form, .contato-container form {
-    max-width: 500px;
+    max-width: 700px;
+    width: 100%;
     margin: 0 auto;
     text-align: left;
 }
@@ -406,8 +407,8 @@ main h2 {
 }
 
 .form-group input, .form-group textarea, .campo input {
-    width: 100%;
-    padding: 14px;
+    width: 115%;
+    padding: 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
     margin-bottom: 20px;
