@@ -1,6 +1,4 @@
-// script.js
-
-// 1. INJETAR O FUNDO INTERATIVO (Agora leve e sem lag)
+// 1. CRIA O FUNDO AZUL
 const meshBg = document.createElement('div');
 meshBg.className = 'mesh-bg';
 meshBg.innerHTML = `
@@ -10,10 +8,19 @@ meshBg.innerHTML = `
 `;
 document.body.prepend(meshBg);
 
-// Removemos a animação de scroll por JS para não lagar o site! 
-// O CSS está cuidando disso sozinho agora.
+// 2. DEIXA A ROLAGEM DA PÁGINA MAIS LEVE
+//  desliga os efeitos do mouse enquanto scrolla a página para não travar
+let scrollTimeout;
+document.addEventListener('scroll', () => {
+    document.body.style.pointerEvents = 'none'; 
+    
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        document.body.style.pointerEvents = 'auto'; 
+    }, 150);
+}, { passive: true });
 
-// 2. LÓGICA DO CARROSSEL DE IMÓVEIS (Página Inicial)
+// 3. FAZ OS CARDS DE IMÓVEIS ANDAREM (BOTÕES < E >)
 function scrollCards(direction) {
     const container = document.getElementById('gridCards');
     if (container) {
@@ -21,7 +28,7 @@ function scrollCards(direction) {
     }
 }
 
-// 3. LÓGICA DA GALERIA DE FOTOS (Página de Detalhes - pagina1.html)
+// 4. TROCA AS FOTOS NA PÁGINA DE DETALHES
 document.addEventListener('DOMContentLoaded', () => {
     const imagemGrande = document.getElementById('imagemGrande');
     const miniaturas = document.querySelectorAll('.miniaturas img');
@@ -32,12 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let indiceAtual = 0;
         const imagensSrc = Array.from(miniaturas).map(img => img.src);
 
+        // Função que muda a foto principal
         function atualizarImagem(indice) {
             imagemGrande.src = imagensSrc[indice];
             miniaturas.forEach(m => m.classList.remove('ativa'));
             miniaturas[indice].classList.add('ativa');
         }
 
+        // Clique nas fotinhos pequenas
         miniaturas.forEach((miniatura, index) => {
             miniatura.addEventListener('click', () => {
                 indiceAtual = index;
@@ -45,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // Botão de voltar foto
         if (btnAnterior) {
             btnAnterior.addEventListener('click', () => {
                 indiceAtual = (indiceAtual === 0) ? imagensSrc.length - 1 : indiceAtual - 1;
@@ -52,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // Botão de avançar foto
         if (btnProximo) {
             btnProximo.addEventListener('click', () => {
                 indiceAtual = (indiceAtual === imagensSrc.length - 1) ? 0 : indiceAtual + 1;
