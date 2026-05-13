@@ -33,8 +33,9 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+
 /* =========================================
-   2. FUNDO INTERATIVO (MESH GRADIENT OTIMIZADO - ZERO LAG)
+   2. FUNDO INTERATIVO (MESH GRADIENT OTIMIZADO)
 ========================================= */
 .mesh-bg {
     position: fixed;
@@ -50,10 +51,12 @@ body {
 .mesh-blob {
     position: absolute;
     border-radius: 50%;
-    /* Joga a animação direto pra (GPU) */
+    /* Joga a animação direto pra GPU */
     animation: float 20s infinite ease-in-out alternate;
     transform: translateZ(0);
     will-change: transform;
+    pointer-events: none; /* Mouse ignora as esferas */
+    contain: strict; /* Isola a renderização das esferas */
 }
 
 /* Troca do blur pesado por radial-gradient leve */
@@ -78,7 +81,7 @@ body {
     animation-delay: -10s;
 }
 
-/* Animação fluida e independente do scroll do mouse */
+/* Animação fluida */
 @keyframes float {
     0% { transform: translate(0, 0) scale(1) translateZ(0); }
     33% { transform: translate(5vw, 10vh) scale(1.1) translateZ(0); }
@@ -280,7 +283,7 @@ main h2 {
 }
 
 /* =========================================
-   6. GRIDS E CARDS DE IMÓVEIS
+   6. GRIDS E CARDS DE IMÓVEIS (OTIMIZADO)
 ========================================= */
 .imoveis-grid {
     display: grid;
@@ -289,15 +292,13 @@ main h2 {
 }
 
 .imovel-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95); /* Fundo sólido quase opaco para aliviar a renderização */
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--sombra);
     display: flex;
     flex-direction: column;
-    transition: var(--transicao);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease; /* Transição otimizada */
     border: 1px solid var(--glass-border);
 }
 
@@ -393,7 +394,8 @@ main h2 {
 }
 
 .login-form, .contato-container form {
-    max-width: 500px;
+    max-width: 700px;
+    width: 100%;
     margin: 0 auto;
     text-align: left;
 }
@@ -407,7 +409,7 @@ main h2 {
 
 .form-group input, .form-group textarea, .campo input {
     width: 100%;
-    padding: 14px;
+    padding: 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
     margin-bottom: 20px;

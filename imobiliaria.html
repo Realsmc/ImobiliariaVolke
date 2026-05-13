@@ -1,69 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imobiliária Volke</title>
+    <title>Sobre Nós - Imobiliária Volke</title>
+    
+    <!-- Fontes e Estilos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="128x128" href="./logo volke.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-    <div class="logo-container">
-        <a href="./index.html">
-            <img src="logo volke.png" alt="Logo Volke" class="logo">
-        </a>
-    </div>
-    <nav class="nav-links">
-        <a href="./comprar.html">Comprar</a>
-        <a href="./alugar.html">Alugar</a>
-        <a href="./pagina1.html">Lançamentos</a>
-        <a href="./imobiliaria.html">Sobre nós</a>
-        <a href="./contato.html">Contato</a>
-        <a href="./cliente.html">Área do Cliente</a>
-    </nav>
-</header>
+    <!-- NAVBAR / MENU DE NAVEGAÇÃO -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="./index.html">
+                <img src="logo volke.png" alt="Logo Volke" class="logo">
+            </a>
+        </div>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Imobiliária Volke</h1>
-        <p>Encontre o Lugar Perfeito para Você.</p>
-    </div>
-</section>
+        <nav class="nav-links">
+            <a href="./comprar.html">Comprar</a>
+            <a href="./alugar.html">Alugar</a>
+            <a href="./pagina1.html">Lançamentos</a>
+            <a href="./imobiliaria.html">Sobre nós</a>
+            <a href="./contato.html">Contato</a>
+            <a href="./cliente.html">Área do Cliente</a>
+        </nav>
+    </header>
 
-<main>
-    <h2>Sobre a Volke</h2>
-    
-    <section class="texto-padrao">
-        <p>A Imobiliária Volke atua com excelência na conexão entre pessoas e oportunidades no mercado imobiliário...</p>
-        
-        <p>Com uma atuação pautada pela transparência e credibilidade, proporcionamos uma experiência diferenciada...</p>
-
-        <div style="text-align: center; margin-top: 30px;">
-            <img src="fachada_imobiliária.png" alt="Nossa Sede" style="max-width: 100%; border-radius: 8px;">
+    <!-- HERO SECTION -->
+    <section class="hero" style="padding: 60px 20px; text-align: center;">
+        <div class="hero-content">
+            <h1>Transformando Sonhos em Patrimônio</h1>
+            <p>Liderança, agilidade e resultados extraordinários no mercado imobiliário.</p>
         </div>
     </section>
-</main>
 
-<footer class="navbar" style="flex-direction: column; gap: 15px; margin-top: 50px;">
-    <div class="logo-container">
-        <img src="logo volke.png" alt="Logo Volke" class="logo">
+    <main>
+        <!-- TEXTO INSTITUCIONAL -->
+        <section class="texto-padrao" style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
+            <h2>Sólida Experiência e Foco em Resultados</h2>
+            
+            <p>A <strong>Imobiliária Volke</strong> consolidou-se como referência por sua capacidade de entregar soluções estratégicas e personalizadas. Nosso diferencial está na alta performance: unimos uma curadoria rigorosa de imóveis à expertise de mercado para garantir que cada transação seja o melhor investimento para nossos clientes.</p>
+            
+            <p>Atuamos com um modelo de negócio pautado na transparência total e na segurança jurídica. Seja na aquisição do primeiro imóvel, na gestão de grandes carteiras ou em locações exclusivas, nossa missão é simplificar processos complexos e acelerar a conquista do seu novo endereço com sofisticação e eficiência.</p>
+
+            <!-- IMAGEM DA SEDE -->
+            <div style="margin-top: 40px; overflow: hidden; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <img src="fachada_imobiliária.png" alt="Nossa Sede" style="width: 100%; display: block;">
+            </div>
+        </section>
+
+        <!-- CARDS DE DIFERENCIAIS -->
+        <section class="imoveis-grid" style="margin: 40px auto; max-width: 1200px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 0 20px;">
+            <article class="imovel-card" style="padding: 30px; text-align: center; border: 1px solid #eee; border-radius: 10px;">
+                <h3 style="margin-bottom: 15px;">Foco no Cliente</h3>
+                <p>Atendimento consultivo focado em entender necessidades para entregar soluções reais.</p>
+            </article>
+            
+            <article class="imovel-card" style="padding: 30px; text-align: center; border: 1px solid #eee; border-radius: 10px;">
+                <h3 style="margin-bottom: 15px;">Agilidade</h3>
+                <p>Processos otimizados e tecnologia de ponta para reduzir o tempo de fechamento de negócios.</p>
+            </article>
+            
+            <article class="imovel-card" style="padding: 30px; text-align: center; border: 1px solid #eee; border-radius: 10px;">
+                <h3 style="margin-bottom: 15px;">Credibilidade</h3>
+                <p>Anos de atuação no mercado com histórico comprovado de satisfação e segurança.</p>
+            </article>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer style="text-align: center; padding: 40px 20px; background-color: #f9f9f9; border-top: 1px solid #eee;">
+        <div class="logo-container" style="margin-bottom: 20px;">
+            <img src="logo volke.png" alt="Logo Volke" class="logo" style="height: 60px;">
+        </div>
+        
+        <div class="social-contato" style="margin-bottom: 20px;">
+            <span style="display: block; margin-bottom: 10px; font-weight: 600;">Conecte-se conosco</span>
+            <div class="social-icons-small" style="display: flex; justify-content: center; gap: 15px;">
+                <a href="#"><img src="https://images.icon-icons.com/2248/PNG/96/instagram_icon_138461.png" alt="Instagram" width="32"></a>
+                <a href="#"><img src="https://images.icon-icons.com/694/PNG/96/Facebook_Rounded_icon-icons.com_61578.png" alt="Facebook" width="32"></a>
+                <a href="#"><img src="https://images.icon-icons.com/472/PNG/48/whatsapp-48_46210.png" alt="Whatsapp" width="32"></a>
+            </div>
         </div>
 
-    <div class="social-contato">
-        <div class="social-icons-small">
-            <a href="#"><img src="https://images.icon-icons.com/2248/PNG/96/instagram_icon_138461.png" alt="Instagram"></a>
-            <a href="#"><img src="https://images.icon-icons.com/694/PNG/96/Facebook_Rounded_icon-icons.com_61578.png" alt="Facebook"></a>
-            <a href="#"><img src="https://images.icon-icons.com/472/PNG/48/whatsapp-48_46210.png" alt="Whatsapp"></a>
-        </div>
-    </div>
+        <p style="font-size: 0.8em; color: #888;">&copy; 2026 Imobiliária Volke. Todos os direitos reservados.</p>
+    </footer>
 
-    <p style="font-size: 0.8em; color: #888;">&copy; 2026 Imobiliária Volke. Todos os direitos reservados.</p>
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
