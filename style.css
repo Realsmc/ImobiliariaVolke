@@ -407,7 +407,7 @@ main h2 {
 }
 
 .form-group input, .form-group textarea, .campo input {
-    width: 115%;
+    width: 100%;
     padding: 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
