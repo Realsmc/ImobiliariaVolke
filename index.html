@@ -1,181 +1,618 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
     <title>Imobiliária Volke - Alto Padrão</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="icon" type="image/png" sizes="128x128" href="./logo volke.png">
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="128x128"
+        href="./logo volke.png">
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
 </head>
+
 <body>
 
+    <!-- ================================================= -->
+    <!-- NAVBAR / MENU DE NAVEGAÇÃO -->
+    <!-- ================================================= -->
+
     <header class="navbar">
+
+        <!-- LOGO -->
         <div class="logo-container">
+
             <a href="./index.html">
-                <img src="logo volke.png" alt="Logo Volke" class="logo">
+
+                <img
+                    src="logo volke.png"
+                    alt="Logo Volke"
+                    class="logo">
+
             </a>
+
         </div>
+
+        <!-- LINKS DO MENU -->
         <nav class="nav-links">
-            <a href="./comprar.html">Comprar</a>
-            <a href="./alugar.html">Alugar</a>
-            <a href="./pagina1.html">Lançamentos</a>
-            <a href="./imobiliaria.html">Sobre nós</a>
-            <a href="./contato.html">Contato</a>
-            <a href="./cliente.html">Área do Cliente</a>
+
+            <a href="./comprar.html">
+                Comprar
+            </a>
+
+            <a href="./alugar.html">
+                Alugar
+            </a>
+
+            <a href="./pagina1.html">
+                Lançamentos
+            </a>
+
+            <a href="./imobiliaria.html">
+                Sobre nós
+            </a>
+
+            <a href="./contato.html">
+                Contato
+            </a>
+
+            <a href="./cliente.html">
+                Área do Cliente
+            </a>
+
         </nav>
+
     </header>
 
+    <!-- ================================================= -->
+    <!-- HERO / BANNER PRINCIPAL -->
+    <!-- ================================================= -->
+
     <section class="hero">
+
+        <!-- TÍTULO -->
         <h1>Os melhores imóveis para você!</h1>
-        <p>Imobiliária Volke - Encontre o lugar perfeito com exclusividade e sofisticação.</p>
-        
+
+        <!-- SUBTÍTULO -->
+        <p>
+            Imobiliária Volke - Encontre o lugar perfeito
+            com exclusividade e sofisticação.
+        </p>
+
+        <!-- ============================================= -->
+        <!-- CAIXA DE PESQUISA -->
+        <!-- ============================================= -->
+
         <div class="search-box">
+
             <form action="#" method="GET">
+
+                <!-- PRETENSÃO -->
                 <div class="input-group">
+
                     <label>Pretensão</label>
+
                     <select name="pretensao">
+
                         <option>Comprar</option>
+
                         <option>Alugar</option>
+
                     </select>
+
                 </div>
-                
+
+                <!-- TIPO DE IMÓVEL -->
                 <div class="input-group">
+
                     <label>Tipo de imóvel</label>
+
                     <select name="tipo">
+
                         <option>Todos os imóveis</option>
+
                         <option>Casa</option>
+
                         <option>Apartamento</option>
+
                         <option>Studio</option>
+
                     </select>
+
                 </div>
-                
+
+                <!-- LOCALIZAÇÃO -->
                 <div class="input-group">
+
                     <label>Localização</label>
-                    <input type="text" name="q" placeholder="Digite ruas, bairros ou cidades...">
+
+                    <input
+                        type="text"
+                        name="q"
+                        placeholder="Digite ruas, bairros ou cidades...">
+
                 </div>
-                
-                <button type="submit" class="btn-search">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+
+                <!-- BOTÃO PESQUISAR -->
+                <button
+                    type="submit"
+                    class="btn-search">
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
                         <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+
+                        <line
+                            x1="21"
+                            y1="21"
+                            x2="16.65"
+                            y2="16.65">
+
+                        </line>
+
                     </svg>
+
                 </button>
+
             </form>
+
         </div>
+
     </section>
 
+    <!-- ================================================= -->
+    <!-- CONTEÚDO PRINCIPAL -->
+    <!-- ================================================= -->
+
     <main>
+
+        <!-- TÍTULO -->
         <h2>Imóveis em Destaque</h2>
-        
+
+        <!-- ============================================= -->
+        <!-- CARROSSEL DE IMÓVEIS -->
+        <!-- ============================================= -->
+
         <div class="carrosel-cards-wrapper">
-            <button class="btn-card-scroll prev" onclick="scrollCards(-1)">&#10094;</button>
-            
+
+            <!-- BOTÃO ANTERIOR -->
+            <button
+                class="btn-card-scroll prev"
+                onclick="scrollCards(-1)">
+
+                &#10094;
+
+            </button>
+
+            <!-- GRID DOS CARDS -->
             <div id="gridCards">
-                
+
+                <!-- ===================================== -->
+                <!-- CARD 1 -->
+                <!-- ===================================== -->
+
                 <article class="imovel-card">
-                    <img src="https://vgprojetos.com/wp-content/uploads/2024/12/P7-1.png" alt="Casa de Campo">
+
+                    <img
+                        src="https://vgprojetos.com/wp-content/uploads/2024/12/P7-1.png"
+                        alt="Casa de Campo">
+
                     <div class="card-content">
+
                         <h3>Casa de Campo</h3>
-                        <p>Linda casa com 3 quartos, suíte, amplo quintal com piscina e área de lazer completa.</p>
-                        <p class="valor">Venda - R$ 950.000,00</p>
+
+                        <p>
+                            Linda casa com 3 quartos,
+                            suíte, amplo quintal com piscina
+                            e área de lazer completa.
+                        </p>
+
+                        <p class="valor">
+                            Venda - R$ 950.000,00
+                        </p>
+
                     </div>
-                    <a href="./pagina1.html" class="btn-detalhes">Ver Detalhes</a>
-                    <a href="https://wa.me/55999999999" class="btn-whatsapp">WhatsApp</a>
+
+                    <!-- BOTÕES -->
+                    <a
+                        href="./pagina1.html"
+                        class="btn-detalhes">
+
+                        Ver Detalhes
+
+                    </a>
+
+                    <a
+                        href="https://wa.me/55999999999"
+                        class="btn-whatsapp">
+
+                        WhatsApp
+
+                    </a>
+
                 </article>
 
+                <!-- ===================================== -->
+                <!-- CARD 2 -->
+                <!-- ===================================== -->
+
                 <article class="imovel-card">
-                    <img src="https://imgs2.cdn-imobibrasil.com.br/imagens/imoveis/202508151646374412.jpg" alt="Apto Varanda Gourmet">
+
+                    <img
+                        src="https://imgs2.cdn-imobibrasil.com.br/imagens/imoveis/202508151646374412.jpg"
+                        alt="Apto Varanda Gourmet">
+
                     <div class="card-content">
+
                         <h3>Apto Varanda Gourmet</h3>
-                        <p>Lindo apartamento de 3 quartos, sendo 1 suíte, andar alto com vista panorâmica.</p>
-                        <p class="valor">Aluguel - R$ 3.500,00 / mês</p>
+
+                        <p>
+                            Lindo apartamento de 3 quartos,
+                            sendo 1 suíte, andar alto
+                            com vista panorâmica.
+                        </p>
+
+                        <p class="valor">
+                            Aluguel - R$ 3.500,00 / mês
+                        </p>
+
                     </div>
-                    <a href="./pagina1.html" class="btn-detalhes">Ver Detalhes</a>
-                    <a href="https://wa.me/55999999999" class="btn-whatsapp">WhatsApp</a>
+
+                    <!-- BOTÕES -->
+                    <a
+                        href="./pagina1.html"
+                        class="btn-detalhes">
+
+                        Ver Detalhes
+
+                    </a>
+
+                    <a
+                        href="https://wa.me/55999999999"
+                        class="btn-whatsapp">
+
+                        WhatsApp
+
+                    </a>
+
                 </article>
 
+                <!-- ===================================== -->
+                <!-- CARD 3 -->
+                <!-- ===================================== -->
+
                 <article class="imovel-card">
-                    <img src="construction-luxury-residential-tower-with-premium-amenities.jpg" alt="Torre Residencial de Luxo">
+
+                    <img
+                        src="construction-luxury-residential-tower-with-premium-amenities.jpg"
+                        alt="Torre Residencial de Luxo">
+
                     <div class="card-content">
+
                         <h3>Apartamento Alto Padrão</h3>
-                        <p>Imóvel luxuoso com 4 quartos e acabamento premium. Sacada envidraçada.</p>
-                        <p class="valor">Aluguel - R$ 6.200,00 / mês</p>
+
+                        <p>
+                            Imóvel luxuoso com 4 quartos
+                            e acabamento premium.
+                            Sacada envidraçada.
+                        </p>
+
+                        <p class="valor">
+                            Aluguel - R$ 6.200,00 / mês
+                        </p>
+
                     </div>
-                    <a href="./pagina1.html" class="btn-detalhes">Ver Detalhes</a>
-                    <a href="https://wa.me/55999999999" class="btn-whatsapp">WhatsApp</a>
+
+                    <!-- BOTÕES -->
+                    <a
+                        href="./pagina1.html"
+                        class="btn-detalhes">
+
+                        Ver Detalhes
+
+                    </a>
+
+                    <a
+                        href="https://wa.me/55999999999"
+                        class="btn-whatsapp">
+
+                        WhatsApp
+
+                    </a>
+
                 </article>
 
+                <!-- ===================================== -->
+                <!-- CARD 4 -->
+                <!-- ===================================== -->
+
                 <article class="imovel-card">
-                    <img src="salvador-bahia-brazil-august-11-2023-very-tall-commercial-building-located-avenida-tancredo-neves-city-salvador-bahia.jpg" alt="Fachada de Prédio Escuro">
+
+                    <img
+                        src="salvador-bahia-brazil-august-11-2023-very-tall-commercial-building-located-avenida-tancredo-neves-city-salvador-bahia.jpg"
+                        alt="Fachada de Prédio Escuro">
+
                     <div class="card-content">
+
                         <h3>Studio no Centro</h3>
-                        <p>Studio em andar alto de edifício recém-construído. Design moderno e vaga coberta.</p>
-                        <p class="valor">Venda - R$ 450.000,00</p>
+
+                        <p>
+                            Studio em andar alto
+                            de edifício recém-construído.
+                            Design moderno e vaga coberta.
+                        </p>
+
+                        <p class="valor">
+                            Venda - R$ 450.000,00
+                        </p>
+
                     </div>
-                    <a href="./pagina1.html" class="btn-detalhes">Ver Detalhes</a>
-                    <a href="https://wa.me/55999999999" class="btn-whatsapp">WhatsApp</a>
+
+                    <!-- BOTÕES -->
+                    <a
+                        href="./pagina1.html"
+                        class="btn-detalhes">
+
+                        Ver Detalhes
+
+                    </a>
+
+                    <a
+                        href="https://wa.me/55999999999"
+                        class="btn-whatsapp">
+
+                        WhatsApp
+
+                    </a>
+
                 </article>
+
+                <!-- ===================================== -->
+                <!-- CARD 5 -->
+                <!-- ===================================== -->
 
                 <article class="imovel-card">
-                    <img src="https://images.homify.com/v1453219822/p/photo/image/1255680/Arquiteta_Camila_Castilho-84.jpg" alt="Casa Térrea Moderna">
+
+                    <img
+                        src="https://images.homify.com/v1453219822/p/photo/image/1255680/Arquiteta_Camila_Castilho-84.jpg"
+                        alt="Casa Térrea Moderna">
+
                     <div class="card-content">
+
                         <h3>Casa Térrea Contemporânea</h3>
-                        <p>Projeto arquitetônico com pé direito duplo, 3 suítes, escritório e garagem.</p>
-                        <p class="valor">Venda - R$ 1.200.000,00</p>
+
+                        <p>
+                            Projeto arquitetônico
+                            com pé direito duplo,
+                            3 suítes, escritório e garagem.
+                        </p>
+
+                        <p class="valor">
+                            Venda - R$ 1.200.000,00
+                        </p>
+
                     </div>
-                    <a href="./pagina1.html" class="btn-detalhes">Ver Detalhes</a>
-                    <a href="https://wa.me/55999999999" class="btn-whatsapp">WhatsApp</a>
+
+                    <!-- BOTÕES -->
+                    <a
+                        href="./pagina1.html"
+                        class="btn-detalhes">
+
+                        Ver Detalhes
+
+                    </a>
+
+                    <a
+                        href="https://wa.me/55999999999"
+                        class="btn-whatsapp">
+
+                        WhatsApp
+
+                    </a>
+
                 </article>
 
-            </div> 
-            
-            <button class="btn-card-scroll next" onclick="scrollCards(1)">&#10095;</button>
+            </div>
+
+            <!-- BOTÃO PRÓXIMO -->
+            <button
+                class="btn-card-scroll next"
+                onclick="scrollCards(1)">
+
+                &#10095;
+
+            </button>
+
         </div>
 
+        <!-- ================================================= -->
+        <!-- SEÇÃO DE INTERAÇÃO -->
+        <!-- ================================================= -->
+
         <section class="secao-interacao">
-            <h2>Gostou de algum modelo específico?</h2>
-            <p>Se você tem a foto de um imóvel que viu, ou o arquivo de um projeto que você amou, envie para nós e encontraremos algo parecido!</p>
-            
-            <form action="#" method="POST" enctype="multipart/form-data">
+
+            <!-- TÍTULO -->
+            <h2>
+                Gostou de algum modelo específico?
+            </h2>
+
+            <!-- TEXTO -->
+            <p>
+                Se você tem a foto de um imóvel
+                que viu, ou o arquivo de um projeto
+                que você amou, envie para nós e
+                encontraremos algo parecido!
+            </p>
+
+            <!-- FORMULÁRIO -->
+            <form
+                action="#"
+                method="POST"
+                enctype="multipart/form-data">
+
+                <!-- ENVIO DE ARQUIVO -->
                 <div class="form-group">
-                    <label for="arquivo_imovel">Anexar imagem ou arquivo do imóvel desejado:</label>
-                    <input type="file" id="arquivo_imovel" name="arquivo_imovel" accept="image/*, .pdf, .doc, .docx">
+
+                    <label for="arquivo_imovel">
+                        Anexar imagem ou arquivo do imóvel desejado:
+                    </label>
+
+                    <input
+                        type="file"
+                        id="arquivo_imovel"
+                        name="arquivo_imovel"
+                        accept="image/*, .pdf, .doc, .docx">
+
                 </div>
-                
+
+                <!-- COMENTÁRIO -->
                 <div class="form-group">
-                    <label for="comentario">Deixe um comentário (opcional):</label>
-                    <textarea id="comentario" name="comentario" rows="4" placeholder="Descreva o que mais gostou no imóvel..."></textarea>
+
+                    <label for="comentario">
+                        Deixe um comentário (opcional):
+                    </label>
+
+                    <textarea
+                        id="comentario"
+                        name="comentario"
+                        rows="4"
+                        placeholder="Descreva o que mais gostou no imóvel...">
+
+                    </textarea>
+
                 </div>
-                
-                <button type="submit" class="btn-enviar-arquivo">Enviar Arquivo</button>
+
+                <!-- BOTÃO -->
+                <button
+                    type="submit"
+                    class="btn-enviar-arquivo">
+
+                    Enviar Arquivo
+
+                </button>
+
             </form>
+
         </section>
 
     </main>
 
+    <!-- ================================================= -->
+    <!-- RODAPÉ -->
+    <!-- ================================================= -->
+
     <footer>
+
+        <!-- LOGO -->
         <div class="logo-container">
-            <img src="logo volke.png" alt="Logo Volke" class="logo" style="height: 60px; filter: grayscale(100%); opacity: 0.6;">
-        </div>
-        
-        <div class="social-contato">
-            <span>Siga-nos nas redes</span>
-            <div class="social-icons-small">
-                <a href="#"><img src="https://images.icon-icons.com/2248/PNG/96/instagram_icon_138461.png" alt="Instagram"></a>
-                <a href="#"><img src="https://images.icon-icons.com/694/PNG/96/Facebook_Rounded_icon-icons.com_61578.png" alt="Facebook"></a>
-                <a href="#"><img src="https://images.icon-icons.com/38/PNG/96/linkedin_social_5085.png" alt="LinkedIn"></a>
-                <a href="#"><img src="https://images.icon-icons.com/947/PNG/96/youtube-play-button-outlined-social-symbol_icon-icons.com_74040.png" alt="Youtube"></a>
-            </div>
+
+            <img
+                src="logo volke.png"
+                alt="Logo Volke"
+                class="logo"
+                style="
+                    height: 60px;
+                    filter: grayscale(100%);
+                    opacity: 0.6;
+                ">
+
         </div>
 
-        <p>&copy; 2026 Imobiliária Volke. Todos os direitos reservados.</p>
+        <!-- ============================================= -->
+        <!-- REDES SOCIAIS -->
+        <!-- ============================================= -->
+
+        <div class="social-contato">
+
+            <span>
+                Siga-nos nas redes
+            </span>
+
+            <div class="social-icons-small">
+
+                <!-- INSTAGRAM -->
+                <a href="#">
+
+                    <img
+                        src="https://images.icon-icons.com/2248/PNG/96/instagram_icon_138461.png"
+                        alt="Instagram">
+
+                </a>
+
+                <!-- FACEBOOK -->
+                <a href="#">
+
+                    <img
+                        src="https://images.icon-icons.com/694/PNG/96/Facebook_Rounded_icon-icons.com_61578.png"
+                        alt="Facebook">
+
+                </a>
+
+                <!-- LINKEDIN -->
+                <a href="#">
+
+                    <img
+                        src="https://images.icon-icons.com/38/PNG/96/linkedin_social_5085.png"
+                        alt="LinkedIn">
+
+                </a>
+
+                <!-- YOUTUBE -->
+                <a href="#">
+
+                    <img
+                        src="https://images.icon-icons.com/947/PNG/96/youtube-play-button-outlined-social-symbol_icon-icons.com_74040.png"
+                        alt="Youtube">
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- DIREITOS AUTORAIS -->
+        <p>
+
+            &copy; 2026 Imobiliária Volke.
+            Todos os direitos reservados.
+
+        </p>
+
     </footer>
 
     <script src="script.js"></script>
+
 </body>
+
 </html>
