@@ -101,7 +101,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 50px;
+    padding: 0px 50px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -113,7 +113,7 @@ body {
 }
 
 .logo-container .logo {
-    height: 180px; 
+    height: 170px; 
     width: auto;
     filter: invert(11%) sepia(50%) saturate(5185%) hue-rotate(200deg) brightness(90%) contrast(105%);
     transition: var(--transicao);
