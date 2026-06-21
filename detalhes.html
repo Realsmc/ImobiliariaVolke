@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Imóvel - Volke</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo-container">
+            <a href="./index.html">
+                <img
+                    src="logo volke.png"
+                    alt="Logo Volke"
+                    class="logo">
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="./imobiliaria.html">Sobre nós</a>
+            <a href="./comprar.html">Comprar</a>
+            <a href="./alugar.html">Alugar</a>
+            <a href="./contato.html">Contato</a>
+            <a href="./cliente.html">Área do Cliente</a>
+        </nav>
+
+    </header>
+
+    <main class="detalhe-imovel">
+
+        <!-- TOPO -->
+
+        <section class="topo-imovel">
+
+            <h1 id="titulo"></h1>
+
+            <p class="subtitulo">
+                Conforto, espaço e qualidade de vida em um só lugar
+            </p>
+
+        </section>
+
+        <!-- GALERIA -->
+
+        <section class="galeria-imovel">
+
+            <div class="imagem-principal">
+
+                <button
+                    type="button"
+                    class="seta esquerda"
+                    id="btnAnterior">
+
+                    ❮
+
+                </button>
+
+                <img
+                    id="imagemGrande"
+                    src=""
+                    alt="Imagem do imóvel">
+
+                <button
+                    type="button"
+                    class="seta direita"
+                    id="btnProximo">
+
+                    ❯
+
+                </button>
+
+            </div>
+
+            <div
+                class="miniaturas"
+                id="miniaturas">
+
+            </div>
+
+        </section>
+
+        <!-- INFORMAÇÕES -->
+
+        <section class="conteudo-imovel">
+
+            <div class="info-imovel">
+
+                <div class="preco">
+
+                    <h2 id="preco"></h2>
+
+                    <span id="negociacao"></span>
+
+                </div>
+
+                <div class="descricao">
+
+                    <h3>Descrição</h3>
+
+                    <p id="descricao"></p>
+
+                </div>
+
+                <a
+                    href="https://wa.me/55999999999"
+                    target="_blank"
+                    class="btn-whatsapp">
+
+                    Entrar em Contato
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- LOCALIZAÇÃO -->
+
+        <section class="localizacao">
+
+            <h3>Localização</h3>
+
+            <p
+                class="endereco"
+                id="endereco">
+
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="detalhes.js"></script>
+
+</body>
+</html>

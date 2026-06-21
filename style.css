@@ -552,3 +552,67 @@ footer {
 .social-icons-small img { width: 26px; height: 26px; opacity: 0.7; transition: var(--transicao); }
 .social-icons-small img:hover { opacity: 1; transform: scale(1.2); }
 footer p { font-size: 0.85rem; color: #888; }
+
+
+/* =========================================
+   11. PÁGINA DE ADMINISTRADOR
+========================================= */
+
+.admin-container{
+    max-width:1000px;
+    margin:40px auto;
+}
+
+.admin-card{
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding:40px;
+    border-radius:20px;
+    box-shadow: var(--sombra);
+    border:1px solid var(--glass-border);
+}
+
+.admin-card h1{
+    text-align:center;
+    color:var(--azul-marinho);
+    margin-bottom:30px;
+}
+
+.lista-imoveis{
+    margin-top:40px;
+}
+
+.imovel-admin{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.botoes-admin{
+    display:flex;
+    gap:10px;
+}
+
+.btn-editar,
+.btn-excluir{
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-editar{
+    background:var(--azul-claro);
+    color:white;
+}
+
+.btn-excluir{
+    background:#dc3545;
+    color:white;
+}
+
