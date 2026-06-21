@@ -9,120 +9,98 @@
 
 <body>
 
-    <header class="navbar">
+<header class="navbar">
 
-        <div class="logo-container">
-            <a href="./index.html">
-                <img
-                    src="logo volke.png"
-                    alt="Logo Volke"
-                    class="logo">
-            </a>
+    <div class="logo-container">
+        <a href="./index.html">
+            <img src="logo volke.png" alt="Logo Volke" class="logo">
+        </a>
+    </div>
+
+    <nav class="nav-links">
+        <a href="./imobiliaria.html">Sobre nós</a>
+        <a href="./comprar.html">Comprar</a>
+        <a href="./alugar.html">Alugar</a>
+        <a href="./contato.html">Contato</a>
+        <a href="./cliente.html">Área do Cliente</a>
+    </nav>
+
+</header>
+
+<main class="detalhe-imovel">
+
+    <section class="topo-imovel">
+
+        <h1 id="titulo"></h1>
+
+        <p class="subtitulo">
+            Conforto, espaço e qualidade de vida em um só lugar
+        </p>
+
+    </section>
+
+    <section class="galeria-imovel">
+
+        <div class="imagem-principal">
+
+            <button
+                type="button"
+                class="seta esquerda"
+                id="btnAnterior">
+
+                ❮
+
+            </button>
+
+            <img
+                id="imagemGrande"
+                src=""
+                alt="Imagem do imóvel">
+
+            <button
+                type="button"
+                class="seta direita"
+                id="btnProximo">
+
+                ❯
+
+            </button>
+
         </div>
 
-        <nav class="nav-links">
-            <a href="./imobiliaria.html">Sobre nós</a>
-            <a href="./comprar.html">Comprar</a>
-            <a href="./alugar.html">Alugar</a>
-            <a href="./contato.html">Contato</a>
-            <a href="./cliente.html">Área do Cliente</a>
-        </nav>
+        <div
+            class="miniaturas"
+            id="miniaturas">
 
-    </header>
+        </div>
 
-    <main class="detalhe-imovel">
+    </section>
 
-        <!-- TOPO -->
+    <section class="conteudo-imovel">
 
-        <section class="topo-imovel">
+        <div class="info-imovel">
 
-            <h1 id="titulo"></h1>
+            <div class="preco">
 
-            <p class="subtitulo">
-                Conforto, espaço e qualidade de vida em um só lugar
-            </p>
+                <h2 id="preco"></h2>
 
-        </section>
-
-        <!-- GALERIA -->
-
-        <section class="galeria-imovel">
-
-            <div class="imagem-principal">
-
-                <button
-                    type="button"
-                    class="seta esquerda"
-                    id="btnAnterior">
-
-                    ❮
-
-                </button>
-
-                <img
-                    id="imagemGrande"
-                    src=""
-                    alt="Imagem do imóvel">
-
-                <button
-                    type="button"
-                    class="seta direita"
-                    id="btnProximo">
-
-                    ❯
-
-                </button>
+                <span id="negociacao"></span>
 
             </div>
 
-            <div
-                class="miniaturas"
-                id="miniaturas">
+            <div class="caracteristicas">
+
+                <div class="item" id="tipo"></div>
 
             </div>
 
-        </section>
+            <div class="descricao">
 
-        <!-- INFORMAÇÕES -->
+                <h3>Descrição</h3>
 
-        <section class="conteudo-imovel">
-
-            <div class="info-imovel">
-
-                <div class="preco">
-
-                    <h2 id="preco"></h2>
-
-                    <span id="negociacao"></span>
-
-                </div>
-
-                <div class="descricao">
-
-                    <h3>Descrição</h3>
-
-                    <p id="descricao"></p>
-
-                </div>
-
-                <a
-                    href="https://wa.me/55999999999"
-                    target="_blank"
-                    class="btn-whatsapp">
-
-                    Entrar em Contato
-
-                </a>
+                <p id="descricao"></p>
 
             </div>
-
-        </section>
-
-        <!-- LOCALIZAÇÃO -->
-
-        <section class="localizacao">
-
-            <h3>Localização</h3>
 
             <p
                 class="endereco"
@@ -130,11 +108,42 @@
 
             </p>
 
-        </section>
+            <a
+                href="https://wa.me/55999999999"
+                target="_blank"
+                class="btn-whatsapp">
 
-    </main>
+                Entrar em Contato
 
-    <script src="detalhes.js"></script>
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="localizacao">
+
+        <h3>Localização</h3>
+
+        <div class="mapa-container">
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.456!2d-53.914!3d-28.387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDIzJzEyLjAiUyA1M8KwNTQnNTAuNCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+
+            </iframe>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="detalhes.js"></script>
 
 </body>
 </html>
