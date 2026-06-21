@@ -90,8 +90,9 @@
 
                     <input
                         type="text"
-                        placeholder="Digite seu usuário">
-
+                        placeholder="Digite seu usuário"
+                        id = "usuario">
+                        
                 </div>
 
                 <!-- CAMPO SENHA -->
@@ -101,18 +102,22 @@
 
                     <input
                         type="password"
-                        placeholder="Digite sua senha">
+                        placeholder="Digite sua senha"
+                        id = "senha">
 
                 </div>
 
                 <!-- BOTÃO LOGIN -->
                 <button
-                    type="submit"
-                    class="btn-login">
+                    type="button"
+                    class="btn-login"
+                    onclick="fazerLogin()">
 
                     Entrar
 
                 </button>
+                <p id="erro" style="color:red; font-size:13px; display:none;"></p>
+                <p id="sucesso" style="color:green; font-size:13px; display:none;"></p>
 
             </form>
 
@@ -135,11 +140,25 @@
                 </a>
 
             </div>
+            <div style="margin-top: 15px;">
+
+                <a
+                    href="./usuario.html"
+                    style="
+                        color: var(--azul-marinho);
+                        font-size: 0.85rem;
+                        text-decoration: none;">
+
+                    Cadastrar usuario
+
+                </a>
+
+            </div>
 
         </div>
 
     </section>
-
+    <script src="./script.js"></script>
 </body>
 
 </html>
