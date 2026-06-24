@@ -605,20 +605,23 @@ footer p { font-size: 0.85rem; color: #888; }
 }
 
 #listaImoveis{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-    gap:20px;
-    margin-top:20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+
 .imovel-admin{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#fff;
-    border-radius:12px;
-    padding:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .imovel-admin img{

@@ -300,7 +300,8 @@ function redefinirSenha() {
     }, 2000);
 }
 
-function carregarUsuarios(){
+function carregarUsuarios()
+{
 
     const lista =
     document.getElementById("listaUsuarios");
