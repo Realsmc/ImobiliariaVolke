@@ -95,17 +95,27 @@
                         
                 </div>
 
-                <!-- CAMPO SENHA -->
                 <div class="campo">
 
-                    <label>Senha</label>
+            <label>Senha</label>
+
+                <div class="senha-container">
 
                     <input
                         type="password"
                         placeholder="Digite sua senha"
-                        id = "senha">
+                        id="senha">
+
+                    <button
+                        type="button"
+                        class="botao-olho"
+                        onclick="mostrarSenha()">
+                        👁
+                    </button>
 
                 </div>
+
+            </div>
 
                 <!-- BOTÃO LOGIN -->
                 <button
@@ -128,7 +138,7 @@
             <div style="margin-top: 15px;">
 
                 <a
-                    href="#"
+                    href="./senha.html"
                     style="
                         color: var(--azul-marinho);
                         font-size: 0.85rem;
@@ -149,12 +159,12 @@
                         font-size: 0.85rem;
                         text-decoration: none;">
 
-                    Cadastrar usuario
+                    Cadastrar usuário
 
                 </a>
 
             </div>
-
+            
         </div>
 
     </section>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recuperar Senha</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="area-cliente">
+
+<div class="login-card">
+
+    <div class="login-titulo">
+        <h1>Recuperar Senha</h1>
+    </div>
+
+    <div class="campo">
+        <label>Usuário</label>
+        <input type="text" id="usuarioRecuperacao">
+    </div>
+
+    <button class="btn-login" onclick="buscarPergunta()">
+        Buscar Pergunta
+    </button>
+
+    <div id="areaPergunta" style="display:none;">
+
+        <p id="textoPergunta"
+           style="margin:20px 0;font-weight:bold;">
+        </p>
+
+        <div class="campo">
+            <label>Resposta</label>
+            <input type="text" id="respostaRecuperacao">
+        </div>
+
+        <div class="campo">
+        <label>Nova Senha</label>
+
+            <div class="senha-container">
+
+                <input type="password" id="novaSenha">
+
+                 </div>
+        </div>
+
+        <button class="btn-login" onclick="redefinirSenha()">
+            Alterar Senha
+        </button>
+
+    </div>
+
+    <p id="mensagem"
+       style="margin-top:15px;">
+    </p>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

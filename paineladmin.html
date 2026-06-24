@@ -1,0 +1,63 @@
+<body>
+
+<div class="admin-page">
+
+    <aside class="admin-sidebar">
+        <div class="cliente-logo">
+            <img src="logo volke.png" alt="">
+            <h2>Volke Admin</h2>
+        </div>
+        <nav>
+            <a href="./paineladmin.html">Usuários</a>
+            <a href="./admin.html">Cadastrar Imóveis</a>
+        </nav>
+
+         <a href="./index.html" class="btn-sair" onclick="sair()">Sair</a>
+
+    </aside>
+    <link rel="stylesheet" href="style.css">
+
+    <main class="admin-content">
+
+        <div class="admin-topo">
+            <h1>Usuários Cadastrados</h1>
+
+        </div>
+
+        <div class="admin-card">
+
+            <div class="tabela-admin">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Usuário</th>
+                            <th>Email</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaUsuarios">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+carregarUsuarios();
+</script>
+
+</body>

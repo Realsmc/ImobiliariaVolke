@@ -74,11 +74,35 @@
                 </div>
 
                 <div class="campo">
+
                     <label>Senha</label>
+
+                    <div class="senha-container">
+
                     <input
-                        type="password"
-                        placeholder="Escolha uma senha"
-                        id="senha_criacao">
+                            type="password"
+                            id="senha_criacao"
+                            placeholder="Escolha uma senha">
+
+                </div>
+                </div>
+
+                <div class="campo">
+                    <label>Pergunta de Segurança</label>
+                    <select id="pergunta_criacao">
+                        <option value="">Selecione</option>
+                        <option value="nome_pet">Qual o nome do seu primeiro pet?</option>
+                        <option value="cidade_nascimento">Em que cidade você nasceu?</option>
+                        <option value="comida_favorita">Qual sua comida favorita?</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                     <label>Resposta</label>
+                        <input
+                        type="text"
+                        placeholder="Digite sua resposta"
+                        id="resposta_criacao">
                 </div>
 
                 <button
