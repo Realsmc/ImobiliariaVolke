@@ -11,117 +11,113 @@
 
 <body>
 
-<div class="mesh-bg">
-    <div class="mesh-blob blob-1"></div>
-    <div class="mesh-blob blob-2"></div>
-    <div class="mesh-blob blob-3"></div>
-</div>
+<div class="admin-page">
 
-  <header class="navbar">
+    <!-- MENU LATERAL -->
+    <aside class="admin-sidebar">
 
-        <div class="logo-container">
-            <a href="./index.html">
-                <img
-                    src="logo volke.png"
-                    alt="Logo Volke"
-                    class="logo">
-
-            </a>
+        <div class="cliente-logo">
+            <img src="logo volke.png" alt="">
+            <h2>Volke Admin</h2>
         </div>
-       
-        <nav class="nav-links">
 
-            <a href="./imobiliaria.html">Sobre nós</a>
-            <a href="./comprar.html">Comprar</a>
-            <a href="./alugar.html">Alugar</a>
-            <a href="./contato.html">Contato</a>
-            <a href="./cliente.html">Área do Cliente</a>
-
+        <nav>
+            <a href="./paineladmin.html">Usuários</a>
+            <a href="./admin.html" class="ativo">Cadastrar Imóveis</a>
         </nav>
 
-    </header>
+        <a href="./index.html" class="btn-sair" onclick="sair()">
+            Sair
+        </a>
 
-<main class="admin-container">
+    </aside>
 
-    <div class="admin-card">
+    <!-- CONTEÚDO -->
+    <main class="admin-content">
 
-        <h1>Painel Administrativo</h1>
+        <div class="admin-topo">
+            <h1>Cadastrar Imóveis</h1>
+        </div>
 
-        <form id="formImovel">
+        <div class="admin-card">
 
-            <div class="form-group">
-            <label>Título</label>
-            <input type="text" id="titulo" required>
-            </div>
+            <form id="formImovel">
 
-            <div class="form-group">
-            <label>Valor</label>
-            <input type="text" id="valor" required>
-            </div>
+                <div class="form-group">
+                    <label>Título</label>
+                    <input type="text" id="titulo" required>
+                </div>
 
-            <div class="form-group">
-            <label>Endereço</label>
-            <input type="text" id="endereco" required>
-            </div>
+                <div class="form-group">
+                    <label>Valor</label>
+                    <div class="input-preco">
+                        <span>R$</span>
+                        <input type="text" id="valor" required>
+                    </div>
+                </div>
 
-            <div class="form-group">
-            <label>Descrição</label>
-            <textarea id="descricao" rows="5"></textarea>
-            </div>
+                <div class="form-group">
+                    <label>Endereço</label>
+                    <input type="text" id="endereco" required>
+                </div>
 
-            <div class="form-group">
-            <label>Negociação</label>
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea id="descricao" rows="5"></textarea>
+                </div>
 
-            <select id="negociacao">
-            <option value="Venda">Venda</option>
-            <option value="Aluguel">Aluguel</option>
-            </select>
-            </div>
+                <div class="form-group">
+                    <label>Negociação</label>
 
-            <div class="form-group">
-            <label>Tipo</label>
+                    <select id="negociacao">
+                        <option value="Venda">Venda</option>
+                        <option value="Aluguel">Aluguel</option>
+                    </select>
 
-            <select id="tipo">
-            <option value="Casa">Casa</option>
-            <option value="Apartamento">Apartamento</option>
-            </select>
-            </div>
+                </div>
 
-            <div class="form-group">
+                <div class="form-group">
+                    <label>Tipo</label>
 
-            <label>Fotos do Imóvel</label>
+                    <select id="tipo">
+                        <option value="Casa">Casa</option>
+                        <option value="Apartamento">Apartamento</option>
+                        <option value="Terreno">Terreno</option>
+                        <option value="Sala Comercial">Sala Comercial</option>
+                    </select>
 
-            <input
-                type="file"
-                id="fotos"
-                multiple
-                accept="image/*">
+                </div>
 
-            <small>
-                Selecione uma ou mais imagens.
-            </small>
+                <div class="form-group">
+                    <label>Imagens</label>
 
-</div>
+                    <input
+                        type="file"
+                        id="fotos"
+                        multiple
+                        accept="image/*">
+                </div>
 
-            <button type="submit" class="btn-enviar">
-            Salvar Imóvel
-            </button>
+                <button
+                    type="submit"
+                    class="btn-enviar">
+
+                    Salvar Imóvel
+
+                </button>
 
             </form>
 
-    <div class="lista-imoveis">
+             <h2>Imóveis Cadastrados</h2>
 
-        <h2>Imóveis Cadastrados</h2>
-
-        <div id="listaImoveis"></div>
+            <div id="listaImoveis"></div>
 
         </div>
 
-    </div>
+    </main>
 
-</main>
+</div>
 
 <script src="admin.js"></script>
 
 </body>
-</html>

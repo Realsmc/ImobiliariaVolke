@@ -3,17 +3,19 @@ const grid = document.getElementById("imoveisGrid");
 const imoveis =
 JSON.parse(localStorage.getItem("imoveis")) || [];
 
-if(imoveis.length === 0){
+const imoveisVenda = imoveis.filter(imovel => imovel.negociacao === "Venda");
+
+if(imoveisVenda.length === 0){
 
     grid.innerHTML = `
         <p style="text-align:center;">
-            Nenhum imóvel cadastrado.
+            Nenhum imóvel à venda cadastrado.
         </p>
     `;
 
 }else{
 
-    imoveis.forEach(imovel => {
+    imoveisVenda.forEach(imovel => {
 
         let imagem = "";
 
@@ -39,7 +41,7 @@ if(imoveis.length === 0){
                 <p>${imovel.descricao}</p>
 
                 <p class="valor">
-                    ${imovel.valor}
+                    R$ ${imovel.valor}
                 </p>
 
             </div>
