@@ -80,6 +80,7 @@ let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 if (!usuarios.some(u => u.usuario === "admin")) {
     usuarios.push({
         nome: "Administrador",
+        cpf: "0000000000",
         email: "admin@volke.com",
         usuario: "admin",
         senha: "admin",
@@ -134,6 +135,7 @@ function criarUsuario() {
   const novaSenha = document.getElementById('senha_criacao').value;
   const novaNome = document.getElementById('nome_criacao').value;
   const novaEmail = document.getElementById('email_criacao').value;
+  const novocpf = document.getElementById('cpf_criacao').value;
 
   const pergunta = document.getElementById('pergunta_criacao').value;
   const resposta = document.getElementById('resposta_criacao').value;
@@ -155,6 +157,7 @@ if (erroSenha) {
       novaSenha === "" ||
       novaNome === "" ||
       novaEmail === "" ||
+      novocpf === "" ||
       pergunta === "" ||
       resposta === ""
   ) {
@@ -181,10 +184,13 @@ if (erroSenha) {
       nome: novaNome,
       email: novaEmail,
       usuario: novoUsuario,
+      cpf: novocpf,
       senha: novaSenha,
       pergunta: pergunta,
       resposta: resposta.toLowerCase()
+
   });
+  
 
   localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
@@ -312,6 +318,7 @@ function carregarUsuarios(){
             <td>${u.nome || "-"}</td>
             <td>${u.usuario}</td>
             <td>${u.email || "-"}</td>
+            <td>${u.cpf || "-"}</td>
             <td>${u.tipo || "cliente"}</td>
 
             <td>
