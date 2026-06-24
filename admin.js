@@ -1,6 +1,19 @@
 let editandoId = null;
 
 // =========================
+// FUNDO AZUL
+// =========================
+
+const meshBg = document.createElement('div');
+meshBg.className = 'mesh-bg';
+meshBg.innerHTML = `
+    <div class="mesh-blob blob-1"></div>
+    <div class="mesh-blob blob-2"></div>
+    <div class="mesh-blob blob-3"></div>
+`;
+document.body.prepend(meshBg);
+
+// =========================
 // CONVERTER IMAGEM
 // =========================
 
